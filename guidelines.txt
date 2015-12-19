@@ -1,0 +1,33 @@
+Hey just some thoughts for organization/efficency, please tell me if I am being crazy.
+
+
+#Variable Names: (list all variable names here once taken)
+
+
+
+
+
+#Images:
+Try and convert everything to .jpg before loading into files sop we don't have to mess with this on the fly.
+
+Profile images: 400px X 400px
+Logos: Set width maybe?
+Stadium pics:  maybe 600px width?
+
+
+
+#Issue creation:
+I know that we all have a lot of ideas for stretch goals so for anything that is part of the Minimal Viable Product (MVP) please begin the issue with the letter "M"  followed by number convention that is in the list
+
+Example:
+M1 - Add Profile Image - Nadia
+M2 - Add Profile Image - Paul
+M3 - .....
+
+For Stretch Goals I think we need to treat these as 'packets' where each stretch goal gets a designation beginning with "S" followed by a number.  And each break down step for that stretch goal will get a ".1" or ".2" etc... so that when we have time to tackle them it will have an easier flow.  That way we can think about the big things and break it down in place of coding over the weekend if you want.
+
+Example: (probably a bad one but you get the idea)
+S1 - making map pins change colors when checked
+S1.1 - select colors for change
+S1.2 - retrieve completed checked items
+S1.3 - Implement new colors on map
