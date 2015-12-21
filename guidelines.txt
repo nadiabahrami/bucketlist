@@ -31,3 +31,12 @@ S1 - making map pins change colors when checked
 S1.1 - select colors for change
 S1.2 - retrieve completed checked items
 S1.3 - Implement new colors on map
+
+
+Git structure -
+
+Break down problems into issues using code labeling above.
+
+Branches will be created for each issue using the issues code name.
+
+You can create a pull request at any time, but someone else must pull to master and the person that pulls to master must close the issue.
