@@ -32,10 +32,13 @@ var stadiumInfo = [
 ];
 
 var allStadiums = [];
+
 function Stadium (name, city, team, long, lat){
   this.name = name;
   this.city = city;
   this.team = team;
+  this.long = long;
+  this.lat = lat;
 }
 
 (function makeStadiums (){
@@ -44,31 +47,28 @@ function Stadium (name, city, team, long, lat){
   }
 })();
 
+var inputHandler = {
+  listContainer: document.getElementById('list'),
 
-var map;
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 38.0, lng: -95.35},
-    zoom: 4
-  });
+
+  createStadiumList: function(){
+    var stadiumList = document.createElement("ul");
+    for (var i = 0; i < allStadiums.length; i++){
+      var stadiumEl = document.createElement("li");
+      var checkbox = document.createElement('input');
+      checkbox.type = "checkbox";
+      checkbox.id = allStadiums[i].name;
+      var label = document.createElement('label')
+      label.htmlFor = "id";
+      label.appendChild(document.createTextNode(allStadiums[i].team));
+      stadiumList.appendChild(checkbox);
+      stadiumList.appendChild(stadiumEl);
+      stadiumEl.appendChild(checkbox);
+      stadiumEl.appendChild(label);
+      stadiumList.appendChild(stadiumEl);
+    }
+    inputHandler.listContainer.appendChild(stadiumList);
+  }
 }
 
-function User  (name, password, zip){
- this.name = name;
- this.password = password;
- this.zip = zip;
-}
-
-
-event.target.password.value
-event.target.name.value
-event.target.zip.value
-
-target.password.value.addEventListener('click', function() {
- for (var i = 0; i < this.password.length; i++) {
-     var setLocal = JSON.stringify(password);
-     localStorage.setItem(setLocal, 'click');
-
-  if (localStorage = true) {
-    JSON.parse(localStorage.getItem(products));
-     };
+inputHandler.createStadiumList();
