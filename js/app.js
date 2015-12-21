@@ -66,11 +66,10 @@ var inputHandler = {
       var checkbox = document.createElement('input');
       checkbox.type = "checkbox";
       checkbox.id = allStadiums[i].name;
+      checkbox.name= "checky"
       var label = document.createElement('label')
       label.htmlFor = "id";
       label.appendChild(document.createTextNode(allStadiums[i].team));
-      stadiumList.appendChild(checkbox);
-      stadiumList.appendChild(stadiumEl);
       stadiumEl.appendChild(checkbox);
       stadiumEl.appendChild(label);
       stadiumList.appendChild(stadiumEl);
@@ -80,3 +79,28 @@ var inputHandler = {
 }
 
 inputHandler.createStadiumList();
+
+var userSelects = {
+  planTrip: document.getElementById('button'),
+
+  checkboxCheck: function(){
+    var checked = [];
+    var yes = document.getElementsByName("checky");
+    for ( var i=0; i<yes.length; i++){
+      console.log(yes[i].checked);
+      if(yes[i].checked){
+        checked.push(yes[i].id);
+        console.log (yes[i].id);
+      }
+    };
+    console.log (checked);
+  },
+
+};
+
+userSelects.planTrip.addEventListener('click', function(event){
+  event.preventDefault();
+  console.log("It works");
+  userSelects.checkboxCheck();
+
+});
