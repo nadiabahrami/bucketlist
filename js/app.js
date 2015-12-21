@@ -32,7 +32,6 @@ var stadiumInfo = [
 ];
 
 var allStadiums = [];
-
 function Stadium (name, city, team, long, lat){
   this.name = name;
   this.city = city;
@@ -40,7 +39,15 @@ function Stadium (name, city, team, long, lat){
 }
 
 (function makeStadiums (){
-  for (var i = 0; i < stadiumName.length; i++){
-    allStadiums.push(new Stadium(stadiumInfo[i][0], stadiumInfo[i][1], stadiumInfo[i][2], stadiumInfo[i][3], stadiumInfo[i][4]);
+  for (var i = 0; i < stadiumInfo.length; i++){
+    allStadiums.push(new Stadium(stadiumInfo[i][0], stadiumInfo[i][1], stadiumInfo[i][2], stadiumInfo[i][3], stadiumInfo[i][4]));
   }
 })();
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 38.0, lng: -95.35},
+    zoom: 4
+  });
+}
