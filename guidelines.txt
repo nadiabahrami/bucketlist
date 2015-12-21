@@ -33,6 +33,7 @@ S1.2 - retrieve completed checked items
 S1.3 - Implement new colors on map
 
 
+
 Git structure -
 
 Break down problems into issues using code labeling above.
