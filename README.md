@@ -13,3 +13,4 @@ This site allows the user to select a trip to the MLB stadiums of their choice a
 
 
 #Sources
+ ALL MLB individual logos were licensed under Fair use via Wikipedia - https://en.wikipedia.org/wiki/

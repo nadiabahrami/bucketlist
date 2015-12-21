@@ -1,4 +1,8 @@
-Hey just some thoughts for organization/efficency, please tell me if I am being crazy.
+#Major League Baseball Bucket List
+A Web site designed to help the user develop a travel plan to visit all Major League Baseball stadiums in one loop, based on a home location. From the homepage, the user inputs a basic key ID (name), password, and location (zip code). From that location, an itinerary and map are generated using lat/long data from google maps api (pages 2 and 3). The final page of the site is an About Us page. As a stretch goal, the team will assess whether possible functionality enhancements can be made to the itinerary site to include a checklist of stadiums visited (stored in local memory) and style improvements.
+
+#Team Members:
+Nadia Bahrami, Paul Sheridan, Shelly Y, Kate Zurlo-Cuva
 
 
 #Variable Names: (list all variable names here once taken)
