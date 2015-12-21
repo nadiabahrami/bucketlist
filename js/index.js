@@ -31,7 +31,7 @@ function pushUser(){
     console.log(users);
   }
 }
-
+location.assign("map.html");
   console.table(users);
 
   localStorage.setItem('users', JSON.stringify(users));
