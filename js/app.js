@@ -47,6 +47,14 @@ function Stadium (name, city, team, long, lat){
   }
 })();
 
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 38.0, lng: -95.35},
+    zoom: 4
+  });
+}
+
 var inputHandler = {
   listContainer: document.getElementById('list'),
 
