@@ -1,0 +1,68 @@
+
+
+
+
+body{
+background: url(http://yubanet.com/uploads/4/Baseball_Stock_035_1.jpg) no-repeat top center;
+ -webkit-background-size: 1400px 800px;
+ -moz-background-size: 1400px 800px;
+ -o-background-size: 1400px 800px;
+ background-size: 1400px 800px;
+}
+
+
+.header {
+  color:rgb(255, 255, 255);
+  font-size: 3em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.slowHeader {
+  color:rgb(255, 255, 255);
+  font-size: 3em;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+
+
+.whiteBox{
+  display:flex;
+  justify-content: flex-end;
+
+
+}
+
+
+.login{
+  display:flex;
+  align-items: center;
+}
+.blockBox {
+  height: 400px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0)
+
+}
+
+
+
+.loginBox {
+/*
+justify-content: center;*/
+  height: 400px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, .25);
+  border-radius: 5px;
+    animation: pulse 8s;
+
+
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(255, 255, 255, 0)
+  }
+  100% {
+    background-color: rgba(255, 255, 255, .25);
+  }
