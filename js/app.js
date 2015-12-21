@@ -55,15 +55,12 @@ var inputHandler = {
     var stadiumList = document.createElement("ul");
     for (var i = 0; i < allStadiums.length; i++){
       var stadiumEl = document.createElement("li");
-
       var checkbox = document.createElement('input');
       checkbox.type = "checkbox";
       checkbox.id = allStadiums[i].name;
-
       var label = document.createElement('label')
       label.htmlFor = "id";
       label.appendChild(document.createTextNode(allStadiums[i].team));
-
       stadiumList.appendChild(checkbox);
       stadiumList.appendChild(stadiumEl);
       stadiumEl.appendChild(checkbox);
