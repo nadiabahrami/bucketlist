@@ -54,20 +54,23 @@ var inputHandler = {
   createStadiumList: function(){
     var stadiumList = document.createElement("ul");
     for (var i = 0; i < allStadiums.length; i++){
+      var stadiumEl = document.createElement("li");
+
       var checkbox = document.createElement('input');
       checkbox.type = "checkbox";
       checkbox.id = allStadiums[i].name;
+
       var label = document.createElement('label')
       label.htmlFor = "id";
       label.appendChild(document.createTextNode(allStadiums[i].team));
-      // var stadiumEl = document.createElement("li");
-      // stadiumEl.textContent = allStadiums[i].team;
-      // stadiumList.appendChild(checkbox);
-      // stadiumList.appendChild(stadiumEl);
-      inputHandler.listContainer.appendChild(checkbox);
-      inputHandler.listContainer.appendChild(label);
+
+      stadiumList.appendChild(checkbox);
+      stadiumList.appendChild(stadiumEl);
+      stadiumEl.appendChild(checkbox);
+      stadiumEl.appendChild(label);
+      stadiumList.appendChild(stadiumEl);
     }
-    //inputHandler.listContainer.appendChild(stadiumList);
+    inputHandler.listContainer.appendChild(stadiumList);
   }
 }
 
