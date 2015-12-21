@@ -44,3 +44,24 @@ function Stadium (name, city, team, long, lat){
     allStadiums.push(new Stadium(stadiumInfo[i][0], stadiumInfo[i][1], stadiumInfo[i][2], stadiumInfo[i][3], stadiumInfo[i][4]);
   }
 })();
+
+
+function User  (name, password, zip){
+ this.name = name;
+ this.password = password;
+ this.zip = zip;
+}
+
+
+event.target.password.value
+event.target.name.value
+event.target.zip.value
+
+target.password.value.addEventListener('click', function() {
+ for (var i = 0; i < this.password.length; i++) {
+     var setLocal = JSON.stringify(password);
+     localStorage.setItem(setLocal, 'click');
+
+  if (localStorage = true) {
+    JSON.parse(localStorage.getItem(products));
+     };
