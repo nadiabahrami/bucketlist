@@ -37,10 +37,38 @@ function Stadium (name, city, team, long, lat){
   this.name = name;
   this.city = city;
   this.team = team;
+  this.long = long;
+  this.lat = lat;
 }
 
 (function makeStadiums (){
-  for (var i = 0; i < stadiumName.length; i++){
-    allStadiums.push(new Stadium(stadiumInfo[i][0], stadiumInfo[i][1], stadiumInfo[i][2], stadiumInfo[i][3], stadiumInfo[i][4]);
+  for (var i = 0; i < stadiumInfo.length; i++){
+    allStadiums.push(new Stadium(stadiumInfo[i][0], stadiumInfo[i][1], stadiumInfo[i][2], stadiumInfo[i][3], stadiumInfo[i][4]));
   }
 })();
+
+var inputHandler = {
+  listContainer: document.getElementById('list'),
+
+
+  createStadiumList: function(){
+    var stadiumList = document.createElement("ul");
+    for (var i = 0; i < allStadiums.length; i++){
+      var checkbox = document.createElement('input');
+      checkbox.type = "checkbox";
+      checkbox.id = allStadiums[i].name;
+      var label = document.createElement('label')
+      label.htmlFor = "id";
+      label.appendChild(document.createTextNode(allStadiums[i].team));
+      // var stadiumEl = document.createElement("li");
+      // stadiumEl.textContent = allStadiums[i].team;
+      // stadiumList.appendChild(checkbox);
+      // stadiumList.appendChild(stadiumEl);
+      inputHandler.listContainer.appendChild(checkbox);
+      inputHandler.listContainer.appendChild(label);
+    }
+    //inputHandler.listContainer.appendChild(stadiumList);
+  }
+}
+
+inputHandler.createStadiumList();
