@@ -14,3 +14,6 @@ This site allows the user to select a trip to the MLB stadiums of their choice a
 
 #Sources
  ALL MLB individual logos were licensed under Fair use via Wikipedia - https://en.wikipedia.org/wiki/
+
+Baseball flip animation -
+http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutorial#.Vnmq6EorLVY
