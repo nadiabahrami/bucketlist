@@ -47,12 +47,61 @@ function Stadium (name, city, team, long, lat){
   }
 })();
 
-var map;
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
     center: {lat: 38.0, lng: -95.35},
-    zoom: 4
   });
+  directionsDisplay.setMap(map);
+
+  document.getElementById('submit').addEventListener('click', function() {
+    userSelects.checkboxCheck();
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+});
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  var waypts = [];
+  var checkboxArray = userSelects.coordinates;
+  for (var i = 0; i < checkboxArray.length; i++) {
+    var parseLat = parseFloat(checkboxArray[i][0]);
+    console.log(parseLat);
+    var parseLng = parseFloat(checkboxArray[i][1]);
+    console.log(parseLng);
+      waypts.push({
+        location: new google.maps.LatLng(parseLng, parseLat),
+        stopover: true
+      });
+  }
+  console.log(waypts);
+
+  directionsService.route({
+    origin: "Seattle, WA",
+    destination: "Seattle, WA",
+    waypoints: waypts,
+    optimizeWaypoints: true,
+    travelMode: google.maps.TravelMode.DRIVING
+  }, function(response, status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+      var route = response.routes[0];
+      // var summaryPanel = document.getElementById('directions-panel');
+      // summaryPanel.innerHTML = '';
+      // For each route, display summary information.
+      for (var i = 0; i < route.legs.length; i++) {
+        var routeSegment = i + 1;
+        summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+            '</b><br>';
+        summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+        summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+        summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+      }
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
 }
 
 var inputHandler = {
@@ -87,23 +136,19 @@ var userSelects = {
 
   checkboxCheck: function(){
     var yes = document.getElementsByName("checky");
-    for ( var i=0; i<yes.length; i++){
-      console.log(yes[i].checked);
+    for ( var i = 0; i < yes.length; i++){
       if(yes[i].checked){
         userSelects.checkedEls.push(yes[i].id);
-        console.log (yes[i].id);
       }
     };
-    console.log(userSelects.checkedEls);
-    for(var i=0; i<this.checkedEls.length; i++){
-      for(var j=0; j<allStadiums.length; j++){
+    for(var i = 0; i<this.checkedEls.length; i++){
+      for(var j = 0; j < allStadiums.length; j++){
         var tempString = allStadiums[j].name.toLowerCase().replace(" ", "_");
-        if(this.checkedEls[i] ===tempString){
+        if(this.checkedEls[i] === tempString){
           var mini =[];
           this.checkedObj.push(allStadiums[j]);
           mini.push(allStadiums[j].lat, allStadiums[j].long);
           this.coordinates.push(mini);
-          console.log(allStadiums[j]);
         }
       }
     }
@@ -112,8 +157,8 @@ var userSelects = {
 
 
 
-userSelects.planTrip.addEventListener('click', function(event){
-  event.preventDefault();
-  console.log("It works");
-  userSelects.checkboxCheck();
-});
+// userSelects.planTrip.addEventListener('click', function(event){
+//   event.preventDefault();
+//   console.log("It works");
+//   userSelects.checkboxCheck();
+// });
