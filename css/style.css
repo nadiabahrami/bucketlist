@@ -1,9 +1,11 @@
 #map {
+  justify-content: center;
   height: 25em;
   width: 45em;
 }
 body {
   display:flex;
+  flex-direction: column;
   justify-content: flex-end;
   font-family: 'Roboto', sans-serif;
 }
@@ -23,4 +25,19 @@ h1 {
   box-shadow: 0 0 0 5px #dddddd;
   font-weight: bold;
   padding: 20px 40px;
+}
+
+ul {
+  list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+ul li{
+	flex: 1 0 200px;
+  box-sizing: border-box;
+  background: #e0ddd5;
+  color: #171e42;
+  padding: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
 }
