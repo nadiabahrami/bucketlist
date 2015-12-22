@@ -9,30 +9,33 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Itinerary</title>
   </head>
-  <body>
-    <section>
+  <body class="body">
+
       <header>
         <h1 class="stitching">Congrats! You are on your way to a baseball-tastic vacation.</h1>
       </header>
-    </section>
-        <p class="blurb">Select your stadiums from the list click the button to make your customized map.</p>
-    <section id="map-container">
+
+    <article class="body-content">
+      <p class="blurb">Select your stadiums from the list click the button to make your customized map.</p>
+      <section id="map-container"></section>
       <div id="map">map goes here</div>
-    <section>
-      <fieldset id ="list"></fieldset>
-      <button type="submit" id="submit">Get my trip!</button>
-    </section>
-    <section>
-      <ul id="path"></ul>
-    </section>
-    <section>
-      <footer>
-        <a href="about.html">About the Authors</a>
-      </footer>
-    </section>
+      <section>
+        <fieldset id ="list"></fieldset>
+        <button type="submit" id="submit">Get my trip!</button>
+      </section>
+      <section>
+        <ul id="path"></ul>
+      </section>
+
+    </article>
+
+
       <script src="js/app.js" type="text/javascript"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHGB5WUa7Gue4hqU0UEtlgrKsgL6oCjsc&callback=initMap"
         async defer>
       </script>
+    <footer class="footer">
+      <a href="about.html">About the Authors</a>
+    </footer>
   </body>
 </html>
