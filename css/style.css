@@ -11,13 +11,17 @@ body {
 }
 
 h1 {
-  padding: 20px;
+  padding-left: 40%;
+  padding-right: 40%;
   font-family: 'Playball', cursive;
   font-size: 36px;
   display: flex;
+
 }
 
 .stitching {
+  padding-left: 40%;
+  padding-right: 40%;
   background: #eeeeee;
   color: #c50322;
   border: 4px dashed #c50322;
@@ -25,6 +29,7 @@ h1 {
   box-shadow: 0 0 0 5px #dddddd;
   font-weight: bold;
   padding: 20px 40px;
+  text-align: center;
 }
 
 ul {

@@ -7,14 +7,14 @@ background: url(http://yubanet.com/uploads/4/Baseball_Stock_035_1.jpg) no-repeat
  -webkit-background-size: 1400px 800px;
  -moz-background-size: 1400px 800px;
  -o-background-size: 1400px 800px;
- background-size: 1400px 800px;
+ background-size: 100%, auto;
 }
 
 h1 {
   padding: 20px;
   font-family: 'Playball', cursive;
   font-size: 36px;
-  display: flex;
+
 }
 
 .stitching {
@@ -24,13 +24,16 @@ h1 {
   border-radius: 20px;
   box-shadow: 0 0 0 5px #dddddd;
   font-weight: bold;
-  padding: 20px 40px;
+  align-content: center;
+  text-align: center;
+
 }
 
 .header {
-  color:rgb(255, 255, 255);
-  font-size: 3em;
+  color:rgb(255, 255, 255, .25);
+  font-size: 5em;
   font-family: 'Roboto', sans-serif;
+
 }
 
 .slowHeader {
