@@ -23,11 +23,39 @@ h1 {
 
 
 
-
+/*
 li{
 
+
+}*/
+
+
+#first{
+  padding-top: 6px;
   list-style: none;
-  animation: pulse 8s;
+  animation: pulse 3s;
+  color:#eeeeee;
+
+
+}
+
+
+#second{
+  padding-top: 6px;
+  list-style: none;
+  animation: pulse 3s;
+    color:#eeeeee;
+
+}
+
+#third{
+  list-style: none;
+    font-size: 48px;
+  animation: pulse 20s;
+  color: #c50322;
+  animation:stretch;
+  animation-delay: 10s;
+
 }
 
 .stitching {
@@ -43,15 +71,7 @@ li{
 
 
 
-/*
-  @keyframes pulse {
-    0% {
-      color: rgba(255, 255, 255, 0)
-    }
-    100% {
-      color: rgba(0, 0, 0, .25);
 
-}*/
 
 
 .header {
@@ -64,19 +84,21 @@ li{
 
 
 
-
+/*
 .slowHeader {
   color:rgb(255, 255, 255);
   font-size: 3em;
   font-family: 'Roboto', sans-serif;
 
-}
+}*/
 
 
 
 .whiteBox{
   display:flex;
   justify-content: flex-end;
+  /*padding-top: 100px;*/
+  /*margin-top: 300px;*/
 
 
 }
@@ -94,7 +116,7 @@ li{
 }
 
 input[placeholder] {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   color:black;
   font-size: 1em;
@@ -135,6 +157,27 @@ input[placeholder] {
   /*background-color: rgba(255, 255, 255, .25);*/
   border-radius: 5px;
 
+}
 
+
+@keyframes pulse {
+  /*animation-delay: 20s;*/
+  0% {
+    color: rgba(255, 255, 255, 0)
+  }
+
+  100% {
+    color: #c50322;
 
 }
+
+}
+
+/*@keyframes pulse {
+  0% {
+    color:  #c50322;
+  }
+  100% {
+    color:rgba(255, 255, 255, 0)
+
+}*/
