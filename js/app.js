@@ -65,7 +65,7 @@ var inputHandler = {
       var stadiumEl = document.createElement("li");
       var checkbox = document.createElement('input');
       checkbox.type = "checkbox";
-      checkbox.id = allStadiums[i].name;
+      checkbox.id = allStadiums[i].name.toLowerCase().replace(" ", "_");
       checkbox.name= "checky"
       var label = document.createElement('label')
       label.htmlFor = "id";
@@ -81,19 +81,29 @@ var inputHandler = {
 inputHandler.createStadiumList();
 
 var userSelects = {
+  checkedEls: [],
+  coordinates: [],
   planTrip: document.getElementById('button'),
 
   checkboxCheck: function(){
-    var checked = [];
     var yes = document.getElementsByName("checky");
     for ( var i=0; i<yes.length; i++){
       console.log(yes[i].checked);
       if(yes[i].checked){
-        checked.push(yes[i].id);
+        userSelects.checkedEls.push(yes[i].id);
         console.log (yes[i].id);
       }
     };
-    console.log (checked);
+    console.log(userSelects.checkedEls);
+    for(var i=0; i<this.checkedEls.length; i++){
+      for(var j=0; j<allStadiums.length; j++){
+        var tempString = allStadiums[j].name.toLowerCase().replace(" ", "_");
+        if(this.checkedEls[i] ===tempString){
+          this.coordinates.push(allStadiums[j]);
+          console.log(allStadiums[j]);
+        }
+      }
+    }
   },
 
 };
