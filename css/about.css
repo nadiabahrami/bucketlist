@@ -14,7 +14,6 @@ div {
   justify-content: center;
   align-content: center;
   width: 20%;
-  background-color: rgba(12, 21, 128, .90);
 }
 img {
   width: 96%;
@@ -43,8 +42,8 @@ a{
 }
 
 .container{
-  width:400px;
-  height:280px;
+  width: 20%;
+  height: 22.71em;
   position: relative;
 }
 .card{
@@ -66,7 +65,6 @@ a{
   display: block;
   box-sizing: border-box;
   padding: 20px;
-  color: white;
   text-align: left;
   background-color: #333;
 }
@@ -95,4 +93,15 @@ a{
 
 .face.back {
   transform: rotateY(180deg);
+}
+
+.css3gradient{width:740px;height:188px;
+ background-color:#851B07;
+ filter:progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#851B07, endColorstr=#1EA130);
+ background-image:-moz-linear-gradient(left bottom, #851B07 0%, #1EA130 100%);
+ background-image:-webkit-linear-gradient(left bottom, #851B07 0%, #1EA130 100%);
+ background-image:-ms-linear-gradient(left bottom, #851B07 0%, #1EA130 100%);
+ background-image:linear-gradient(left bottom, #851B07 0%, #1EA130 100%);
+ background-image:-o-linear-gradient(left bottom, #851B07 0%, #1EA130 100%);
+ background-image:-webkit-gradient(linear, left bottom, right top, color-stop(0%,#851B07), color-stop(100%,#1EA130));
 }
