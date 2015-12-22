@@ -58,7 +58,6 @@ function initMap() {
 var inputHandler = {
   listContainer: document.getElementById('list'),
 
-
   createStadiumList: function(){
     var stadiumList = document.createElement("ul");
     for (var i = 0; i < allStadiums.length; i++){
@@ -82,6 +81,7 @@ inputHandler.createStadiumList();
 
 var userSelects = {
   checkedEls: [],
+  checkedObj: [],
   coordinates: [],
   planTrip: document.getElementById('button'),
 
@@ -99,18 +99,21 @@ var userSelects = {
       for(var j=0; j<allStadiums.length; j++){
         var tempString = allStadiums[j].name.toLowerCase().replace(" ", "_");
         if(this.checkedEls[i] ===tempString){
-          this.coordinates.push(allStadiums[j]);
+          var mini =[];
+          this.checkedObj.push(allStadiums[j]);
+          mini.push(allStadiums[j].lat, allStadiums[j].long);
+          this.coordinates.push(mini);
           console.log(allStadiums[j]);
         }
       }
     }
   },
-
 };
+
+
 
 userSelects.planTrip.addEventListener('click', function(event){
   event.preventDefault();
   console.log("It works");
   userSelects.checkboxCheck();
-
 });
