@@ -17,7 +17,6 @@
 
 
 
-
     <container class = "whiteBox">
 
     <div class = 'loginBox'>
@@ -25,16 +24,26 @@
 
 
     <div id = "loginList">
+
+      <button type="button" name="button" id = "rookie" onclick = "begin()"> Sign up</button>
+
+       <button type="button" name="button" id = "veteran" onclick ="batterUp()" > Login</button>
+
+             <button type="submit" name="button" id = "resume"  onclick = "playBall()"> Play Ball</button>
+
       <form id = "infoForm">
 
-      <input name = "name" input type="text" class = .login name="text" value="" placeholder="Name">
+      <input name = "name" input type="text" class = "login" id = "userName" name="text" value="" placeholder="Name">
 
-       <input name ="password" input type="text" class = .login name="text" value="" placeholder="Password">
+       <input name ="password" input type="text" class = "login" id = "userPW" name="text" value="" placeholder="Password" >
 
-       <input name = "zip" input type="text" class = .login name="text" value="" placeholder="Zip Code">
-         <button type="submit" name="button" id = "begin"> Begin</button>
+       <input name = "zip" input type="text" class = "login" id = "zip" name="text" value="" placeholder="Zip Code">
 
-     </form>
+         <button type="submit" name="button" id = "resume"> Submit</button>
+
+
+        </form>
+
 
 
     </div>
