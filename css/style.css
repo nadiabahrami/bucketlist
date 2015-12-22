@@ -1,8 +1,17 @@
 #map {
-  justify-content: center;
   height: 25em;
   width: 45em;
+  text-align: center;
+  padding: 0 auto;
+  margin: 0 auto;
 }
+
+#map-container {
+  text-align: center;
+  padding: 0 auto;
+  margin: 0 auto;
+}
+
 body {
   display:flex;
   flex-direction: column;
@@ -14,7 +23,7 @@ h1 {
   padding-left: 40%;
   padding-right: 40%;
   font-family: 'Playball', cursive;
-  font-size: 36px;
+  font-size: 3em;
   display: flex;
 
 }
@@ -26,23 +35,76 @@ h1 {
   color: #c50322;
   border: 4px dashed #c50322;
   border-radius: 20px;
-  box-shadow: 0 0 0 5px #dddddd;
+  box-shadow: 5px 0 5px 0 #dddddd;
+  radius: 0;
   font-weight: bold;
   padding: 20px 40px;
   text-align: center;
 }
 
+.blurb {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 2.5em;
+  margin: 0 auto;
+}
+#list ul {
+  padding: 0 auto;
+  margin: 0 auto;
+}
+
+#list {
+  border-style: none;
+}
 ul {
   list-style-type: none;
 	display: flex;
 	flex-wrap: wrap;
+  padding: 0 auto;
+  border-style: hidden;
 }
 ul li{
 	flex: 1 0 200px;
   box-sizing: border-box;
   background: #eeeeee;
   color: #171e42;
-  padding: 10px;
 	margin-left: 10px;
 	margin-top: 10px;
+}
+
+footer {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  font-size: 1em;
+  padding-top: 2em;
+  text-align: center;
+}
+a:link {
+  color: gray;
+  text-decoration: none;
+}
+
+a:visited {
+color: #999999;
+text-decoration: none;
+}
+
+a:hover {
+color: #c50322;
+text-decoration: none;
+}
+
+#submit {
+ font-family: 'Roboto', sans-serif;
+ font-weight: bold;
+ color:#eeeeee;
+ font-size: 1em;
+ background-color: #c50322;
+ height: 50px;
+ width: 120px;
+}
+
+#submit:hover{
+ background-color: rgba(12, 21, 128, .90);
+
 }
