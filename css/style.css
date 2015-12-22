@@ -1,4 +1,5 @@
 #map {
+  justify-content: center;
   height: 25em;
   width: 45em;
 }
@@ -7,9 +8,6 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   font-family: 'Roboto', sans-serif;
-}
-#map-container {
-  justify-content: center;
 }
 
 h1 {
