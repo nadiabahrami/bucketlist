@@ -1,0 +1,36 @@
+/*body * {
+  border:4px dotted;
+
+}*/
+article {
+  margin: 3%;
+  display:inline-flex;
+  flex-wrap: wrap;
+  justify-content:space-around;*/
+  flex-direction:column;
+}
+
+div {
+  justify-content: center;
+  align-content: center;
+  width: 20%;
+  background-color: rgba(12, 21, 128, .90);
+}
+img {
+  width: 97.1%;
+}
+
+.fullName {
+  font-family: 'Playball', cursive;
+  text-align: center;
+  color:#c50322;
+  font-size: 200%;
+  margin: 2% auto;
+  background-color: white;
+
+}
+
+.bio {
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+}
