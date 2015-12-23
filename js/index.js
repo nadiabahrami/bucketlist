@@ -1,20 +1,11 @@
 users =[];
 
-// console.log(localStorage.getItem('active_user'));
-// // console.log(localStorage.key(1));
-// console.log(localStorage.length)
-//
-// var activeUser = localStorage.getItem('active_user');
-// var getUser = localStorage.getItem(activeUser);
-// console.log(getUser);
-
 
 
 function User  (name, password, zip){
   this.name = name;
   this.password = password;
   this.zip = zip;
-  this.time = sessionStorage.getItem('time');
   users.push(this);
 }
 
@@ -23,13 +14,16 @@ var handleCommentNew = function(event){
 
   if (!event.target.name.value || !event.target.password.value || !event.target.zip.value) {
     // return alert("Please complete all fields.");
-
     var incomplete = document.getElementById('alert');
     var incomplete2 = document.createElement('p')
     var incomplete3 = document.createTextNode('Please Complete All Fields');
     incomplete.appendChild(incomplete2);
       incomplete2.appendChild(incomplete3);
+  } else {
+    location.assign("map.html");
+
   };
+
   userInput =[];
   userInput.push(event.target.name.value);
   userInput.push(event.target.password.value);
@@ -48,7 +42,7 @@ active_users = users[0];
 console.log(users);
 console.log(active_users);
 
-  location.assign("map.html");
+  // location.assign("test2.html");
 
   // var x = new Date();
   // var y = x.getSeconds();
@@ -99,10 +93,8 @@ var handleCommentResume = function(event) {
 
   if
     (localStorage.getItem(users[0].name) !== JSON.stringify(users)) {
-    localStorage.setItem(users[0].name, JSON.stringify(users));
-    users = JSON.parse(localStorage.getItem(users[0].name));
-    // alert('wrong');
-
+    // localStorage.setItem(users[0].name, JSON.stringify(users));
+    // users = JSON.parse(localStorage.getItem(users[0].name));
 
     var wrong = document.getElementById('alert');
     var wrong2 = document.createElement('p')
@@ -168,6 +160,6 @@ function invisible2(){
 invisible2();
 invisible();
 
-// function playBall(){
-//   location.assign("map.html");
-// }
+function playBall(){
+  location.assign("map.html");
+}
