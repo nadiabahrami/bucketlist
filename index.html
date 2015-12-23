@@ -1,70 +1,40 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>MLBucketList</title>
-      <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/login.css">
   </head>
   <body>
-
     <div class="backgroundPicture"></div>
-
       <!-- <h1 class = "stitching">30 Ballparks.</h1> -->
-
-        <h1 class = "stitching"><li id="first">30 Ball Parks</li><li id = "third">MLBucket List<li id = "second">Experience them All.</li></h1>
-
-
-
-
+      <h1 class="stitching"><li id="first">30 Ball Parks</li><li id="third">MLBucket List<li id="second">Experience them All.</li></h1>
+      <!-- <h1 class = "slowHeader"> Experience them all.</h1> -->
     <container class = "whiteBox">
-
-
-
-    <div class = 'loginBox'>
-
-
-    <div id = "loginList">
-
-      <button type="button" class = "buttons" name="button" id = "rookie" onclick = "begin()"> Sign up</button>
-
-       <button type="button" class = "buttons" name="button" id = "veteran" onclick ="batterUp()" > Login</button>
-
-             <button type="submit" class = buttons name="button" id = "resume"  onclick = "playBall()"> Play Ball</button>
-
-      <form id = "infoForm">
-
-      <input name = "name" input type="text" class = "login" id = "userName" name="text" value="" placeholder="Name">
-
-       <input name ="password" input type="text" class = "login" id = "userPW" name="text" value="" placeholder="Password" >
-
-       <input name = "zip" input type="text" class = "login" id = "zip" name="text" value="" placeholder="Zip Code">
-
-         <button type="submit" class = "buttons" name="button" id = "resume"> Submit</button>
-
-
-        </form>
-
-
-    </div>
-
-
-    </div>
-
-      <div class = 'blockBox'>
-      <h4 id = "alert">
-
-    </h4>
-
+      <div class = 'loginBox'>
+        <section>
+          <p id="prompt">Welcome to MLBucket List. Sign up or Login to generate a dynamic road trip between MLB stadiums and keep a log of every stadium you've visited.</p>
+        </section>
+        <div id = "loginList">
+          <button type="button" class="buttons" name="button" id="rookie" onclick="begin()">Sign up</button>
+          <button type="button" class="buttons" name="button" id="veteran" onclick="batterUp()">Login</button>
+          <button type="submit" class="buttons" name="button" id="resume" onclick="playBall()">Play Ball</button>
+          <form id = "infoForm">
+            <input name="name" input type="text" class="login" id="userName" name="text" value="" placeholder="Name">
+            <input name="password" input type="text" class="login" id="userPW" name="text" value="" placeholder="Password">
+            <input name="zip" input type="text" class="login" id="zip" name="text" value="" placeholder="Zip Code">
+            <button type="submit" class="buttons" name="button" id="resume"> Submit</button>
+          </form>
+        </div>
       </div>
-
+      <div class='blockBox'>
+        <h4 id = "alert">
+        </h4>
+      </div>
     </container>
-
-  <script src = "js/index.js">
-  </script>
-
+  <script src="js/index.js"></script>
   </body>
 </html>
