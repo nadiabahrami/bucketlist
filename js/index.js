@@ -48,17 +48,21 @@ active_users = users[0];
 console.log(users);
 console.log(active_users);
 
-  var x = new Date();
-  var y = x.getSeconds();
-  console.log(y);
+  location.assign("map.html");
+
+  // var x = new Date();
+  // var y = x.getSeconds();
+  // console.log(y);
 
 
   //
-  var playBall =document.getElementsByTagName('button')[2];
-  playBall.hidden = false;
+
+
+  console.log(playBall);
   //
   var button0 =document.getElementsByTagName('button')[0];
-  button0.hidden = true;
+  button0.hidden = false;
+
   event.target.name.value = null;
   event.target.password.value = null;
   event.target.zip.value = null;
@@ -109,7 +113,7 @@ var handleCommentResume = function(event) {
 
 
   } else {
-    location.assign("test2.html");
+    location.assign("map.html");
     // playBall();
   }
   //
@@ -160,9 +164,10 @@ function invisible2(){
 //   var button1 = document.getElementsByTagName('button')[0];
 //   button1.hidden=true;
 // }
+
 invisible2();
 invisible();
 
-function playBall(){
-  location.assign("test2.html");
-}
+// function playBall(){
+//   location.assign("map.html");
+// }
