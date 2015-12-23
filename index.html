@@ -5,7 +5,7 @@
     <title>MLBucketList</title>
     <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="css/login.css">
   </head>
   <body>
@@ -16,7 +16,7 @@
     <container class = "whiteBox">
       <div class = 'loginBox'>
         <section>
-          <p id="prompt">Welcome to MLBucket List. Sign up or Login to generate a dynamic roadtrip between MLB stadiums and keep a log of every stadium you've visited.</p>
+          <p id="prompt">Welcome to MLBucket List. Sign up or Login to generate a dynamic road trip between MLB stadiums and keep a log of every stadium you've visited.</p>
         </section>
         <div id = "loginList">
           <button type="button" class="buttons" name="button" id="rookie" onclick="begin()">Sign up</button>
@@ -30,7 +30,10 @@
           </form>
         </div>
       </div>
-      <div class='blockBox'></div>
+      <div class='blockBox'>
+        <h4 id = "alert">
+        </h4>
+      </div>
     </container>
   <script src="js/index.js"></script>
   </body>
