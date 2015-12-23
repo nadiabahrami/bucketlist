@@ -1,4 +1,5 @@
 #map {
+  justify-content: space-around;
   height: 25em;
   width: 45em;
   text-align: left;
@@ -42,24 +43,23 @@ h1 {
   color: #c50322;
   border: 4px dashed #c50322;
   border-radius: 20px;
-  box-shadow: 5px 0 5px 0 #dddddd;
+  box-shadow: 0 0 0 5px #dddddd;
   radius: 0;
   font-weight: bold;
   padding: 20px 40px;
   text-align: center;
 
 /*
-
   -webkit-box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
 -moz-box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
 box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
 */
 
 
--moz-box-shadow:    inset 0 0 10px #000000;
+/*-moz-box-shadow:    inset 0 0 10px #000000;
 -webkit-box-shadow: inset 0 0 10px #000000;
 box-shadow:         inset 0 0 10px #000000;
-
+*/
 
 
 }
