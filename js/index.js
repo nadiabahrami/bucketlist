@@ -67,7 +67,14 @@ console.log(active_users);
 var handleCommentResume = function(event) {
   event.preventDefault();
   if (!event.target.name.value || !event.target.password.value || !event.target.zip.value) {
-    return alert("Please complete all fields.");
+    // return alert("Please complete all fields.");
+
+
+    var wrong = document.getElementById('alert');
+    var wrong2 = document.createElement('p')
+    var wrong3 = document.createTextNode('Please, complete all fields.');
+    wrong.appendChild(wrong2);
+     wrong2.appendChild(wrong3);
   };
 
   userInput =[];
