@@ -65,16 +65,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var waypts = [];
   var checkboxArray = userSelects.coordinates;
   for (var i = 0; i < checkboxArray.length; i++) {
-    var parseLat = parseFloat(checkboxArray[i][0]);
-    console.log(parseLat);
-    var parseLng = parseFloat(checkboxArray[i][1]);
-    console.log(parseLng);
-      waypts.push({
-        location: new google.maps.LatLng(parseLng, parseLat),
-        stopover: true
-      });
+    waypts.push({
+      location: new google.maps.LatLng(parseFloat(checkboxArray[i][1]), parseFloat(checkboxArray[i][0])),
+      stopover: true
+    });
   }
-  console.log(waypts);
 
   directionsService.route({
     origin: "Seattle, WA",
@@ -86,12 +81,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     if (status === google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
       var route = response.routes[0];
-      // var summaryPanel = document.getElementById('directions-panel');
-      // summaryPanel.innerHTML = '';
-      // For each route, display summary information.
+      var summaryPanel = document.getElementById('directions-panel');
+      summaryPanel.innerHTML = '';
       for (var i = 0; i < route.legs.length; i++) {
         var routeSegment = i + 1;
-        summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+        summaryPanel.innerHTML += '<b>Drive: ' + routeSegment +
             '</b><br>';
         summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
         summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
@@ -141,7 +135,7 @@ var userSelects = {
         userSelects.checkedEls.push(yes[i].id);
       }
     };
-    for(var i = 0; i<this.checkedEls.length; i++){
+    for(var i = 0; i < this.checkedEls.length; i++){
       for(var j = 0; j < allStadiums.length; j++){
         var tempString = allStadiums[j].name.toLowerCase().replace(" ", "_");
         if(this.checkedEls[i] === tempString){
@@ -154,11 +148,3 @@ var userSelects = {
     }
   },
 };
-
-
-
-// userSelects.planTrip.addEventListener('click', function(event){
-//   event.preventDefault();
-//   console.log("It works");
-//   userSelects.checkboxCheck();
-// });
