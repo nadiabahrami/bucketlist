@@ -67,7 +67,6 @@ var handleCommentResume = function(event) {
   if (!event.target.name.value || !event.target.password.value || !event.target.zip.value) {
     // return alert("Please complete all fields.");
 
-
     var wrong = document.getElementById('alert');
     var wrong2 = document.createElement('p')
     var wrong3 = document.createTextNode('Please, complete all fields.');
@@ -98,10 +97,17 @@ var handleCommentResume = function(event) {
 
     var wrong = document.getElementById('alert');
     var wrong2 = document.createElement('p')
-    var wrong3 = document.createTextNode('Please, try again.');
+    var wrong3 = document.createTextNode('Please, try again. Case-sensitive.');
     wrong.appendChild(wrong2);
      wrong2.appendChild(wrong3);
-
+    //  batterUp();
+    //  invisible2();
+    //  invisible();
+    // location.assign("sBUIndex3.html");
+invisible();
+invisible2();
+invisible3();
+error();
 
 
   } else {
@@ -152,14 +158,19 @@ function invisible2(){
   button2.hidden = true;
 }
 
-// function invisible3(){
-//   var button1 = document.getElementsByTagName('button')[0];
-//   button1.hidden=true;
-// }
+function invisible3(){
+  var button1 = document.getElementsByTagName('button')[1];
+  button1.hidden=true;
+}
 
 invisible2();
 invisible();
 
+function error(){
+  var button2 =document.getElementsByTagName('button')[2];
+  button2.hidden = false;
+}
+
 function playBall(){
-  location.assign("map.html");
+  location.assign("index.html");
 }
