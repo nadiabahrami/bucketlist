@@ -7,7 +7,7 @@ background: url(http://yubanet.com/uploads/4/Baseball_Stock_035_1.jpg) no-repeat
  -webkit-background-size: 1400px 800px;
  -moz-background-size: 1400px 800px;
  -o-background-size: 1400px 800px;
- background-size: 1400px 800px;
+ background-size: 100%;
 }
 
 h1 {
@@ -19,6 +19,9 @@ h1 {
   font-family: 'Playball', cursive;
   font-size: 36px;
   display: flex;
+  -webkit-box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
+-moz-box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
+box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
 }
 
 
@@ -33,7 +36,7 @@ li{
 #first{
   padding-top: 6px;
   list-style: none;
-  animation: pulse 3s;
+  animation: pulse 6s;
   color:#eeeeee;
 
 
@@ -43,7 +46,7 @@ li{
 #second{
   padding-top: 6px;
   list-style: none;
-  animation: pulse 3s;
+  animation: pulse 6s;
     color:#eeeeee;
 
 }

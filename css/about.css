@@ -1,5 +1,5 @@
 body {
-  background: url(http://yubanet.com/uploads/4/Baseball_Stock_035_1.jpg) no-repeat top center;
+  background: url(diamond_background.jpg) no-repeat top center;
    -webkit-background-size: 1400px 800px;
    -moz-background-size: 1400px 800px;
    -o-background-size: 1400px 800px;
@@ -110,6 +110,7 @@ a {
 
 .footer {
   background-color: #c50322;
+  padding: 2em;
 }
 
 .body {
