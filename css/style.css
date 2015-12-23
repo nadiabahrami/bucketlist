@@ -127,6 +127,7 @@ text-decoration: none;
  height: 50px;
  width: 120px;
  align-items: center;
+ margin-left: 46%;
 }
 
 #submit:hover{
