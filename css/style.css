@@ -1,12 +1,15 @@
 #map {
+  justify-content: space-around;
   height: 25em;
   width: 45em;
-  text-align: center;
+  text-align: left;
   padding: 0 auto;
   margin: 0 auto;
 }
 
 #map-container {
+  display:flex;
+  flex-direction: row;
   text-align: center;
   padding: 0 auto;
   margin: 0 auto;
