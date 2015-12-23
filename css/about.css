@@ -1,9 +1,9 @@
 body {
   background: url(diamond_background.jpg) no-repeat top center;
-   -webkit-background-size: 1400px 800px;
-   -moz-background-size: 1400px 800px;
-   -o-background-size: 1400px 800px;
-   background-size: 1400px 800px;
+   -webkit-background-size: 100%;
+   -moz-background-size: 100%;
+   -o-background-size: 100%;
+   background-size: 100%;
 }
 
 article {
