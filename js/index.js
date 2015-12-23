@@ -14,6 +14,7 @@ function User  (name, password, zip){
   this.name = name;
   this.password = password;
   this.zip = zip;
+  this.time = sessionStorage.getItem('time');
   users.push(this);
 }
 
@@ -21,7 +22,13 @@ var handleCommentNew = function(event){
   event.preventDefault();
 
   if (!event.target.name.value || !event.target.password.value || !event.target.zip.value) {
-    return alert("Please complete all fields.");
+    // return alert("Please complete all fields.");
+
+    var incomplete = document.getElementById('alert');
+    var incomplete2 = document.createElement('p')
+    var incomplete3 = document.createTextNode('Please Complete All Fields');
+    incomplete.appendChild(incomplete2);
+      incomplete2.appendChild(incomplete3);
   };
   userInput =[];
   userInput.push(event.target.name.value);
@@ -41,10 +48,19 @@ active_users = users[0];
 console.log(users);
 console.log(active_users);
 
+  var x = new Date();
+  var y = x.getSeconds();
+  console.log(y);
+  sessionStorage.setItem('time', y);
+
+  console.log(sessionStorage.getItem('time'));
 
 
-  var playBall =document.getElementsByTagName('button')[2];
-  playBall.hidden = false;
+
+  //
+  // var playBall =document.getElementsByTagName('button')[2];
+  // playBall.hidden = false;
+  //
   var button0 =document.getElementsByTagName('button')[0];
   button0.hidden = true;
   event.target.name.value = null;
@@ -55,7 +71,7 @@ console.log(active_users);
 var handleCommentResume = function(event) {
   event.preventDefault();
   if (!event.target.name.value || !event.target.password.value || !event.target.zip.value) {
-    return alert("Please complete all fields.");
+    // return alert("Please complete all fields.");
   };
 
   userInput =[];
@@ -73,17 +89,22 @@ var handleCommentResume = function(event) {
 
   localStorage.removeItem('active_user');
   localStorage.setItem('active_user', users[0].name);
-  console.log(users[0].name);
-
 
   if
     (localStorage.getItem(users[0].name) !== JSON.stringify(users)) {
     localStorage.setItem(users[0].name, JSON.stringify(users));
     users = JSON.parse(localStorage.getItem(users[0].name));
-    alert("Wrong");
+
+    // var wrong = document.getElementById('alert');
+    var wrong2 = document.createElement('p')
+    var wrong3 = document.createTextNode('Wrong password try again');
+    wrong.appendChild(wrong2);
+     wrong2.appendChild(wrong3);
+
+
 
   } else {
-    location.assign("map.html");
+    // location.assign("test2.html");
     // playBall();
   }
   //
@@ -138,5 +159,5 @@ invisible2();
 invisible();
 
 function playBall(){
-  location.assign("map.html");
+  location.assign("test2.html");
 }
