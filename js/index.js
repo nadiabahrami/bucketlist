@@ -73,12 +73,15 @@ var handleCommentResume = function(event) {
 
   localStorage.removeItem('active_user');
   localStorage.setItem('active_user', users[0].name);
+  console.log(users[0].name);
+
 
   if
     (localStorage.getItem(users[0].name) !== JSON.stringify(users)) {
     localStorage.setItem(users[0].name, JSON.stringify(users));
     users = JSON.parse(localStorage.getItem(users[0].name));
     alert("Wrong");
+
   } else {
     location.assign("map.html");
     // playBall();
