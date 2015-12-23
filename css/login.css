@@ -13,58 +13,18 @@ background: url(background.jpg) no-repeat top center;
 h1 {
   display:flex;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  padding: 0 auto;
   padding-left: 20px;
   padding-right:20px;
   font-family: 'Playball', cursive;
-  font-size: 1.5em;
+  font-size: 3em;
   display: flex;
   -webkit-box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
 -moz-box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
 box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
 }
 
-
-
-/*
-li{
-
-
-}*/
-
-#prompt{
-  color: white;
-  line-height: 1.5;
-}
-
-
-#first{
-  padding-top: 6px;
-  list-style: none;
-  animation: pulse 6s;
-  color:#c50322;
-
-
-}
-
-
-#second{
-  padding-top: 6px;
-  list-style: none;
-  animation: pulse 6s;
-    color:#c50322;
-
-}
-
-#third{
-  list-style: none;
-    font-size: 4em;
-  animation: pulse 20s;
-  color: #c50322;
-  animation:stretch;
-  animation-delay: 10s;
-
-}
 
 .stitching {
   background: #eeeeee;
@@ -73,9 +33,45 @@ li{
   border-radius: 20px;
   box-shadow: 0 0 0 5px #dddddd;
   font-weight: bold;
-  padding: 20px 40px;
+
 
 }
+
+#prompt{
+  color: white;
+  line-height: 1.5;
+}
+
+
+#first{
+  /*padding-top: 6px;*/
+  list-style: none;
+  animation: pulse 6s;
+  color:#c50322;
+  align-items: baseline;
+
+
+}
+
+
+#second{
+  /*padding-top: 6px;*/
+  list-style: none;
+  animation: pulse 6s;
+  color:#c50322;
+  align-items: baseline;
+
+}
+
+#third{
+  list-style: none;
+  animation: pulse 20s;
+  animation:stretch;
+  animation-delay: 10s;
+
+}
+
+
 
 
 
