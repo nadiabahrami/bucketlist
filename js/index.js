@@ -51,15 +51,11 @@ console.log(active_users);
   var x = new Date();
   var y = x.getSeconds();
   console.log(y);
-  sessionStorage.setItem('time', y);
-
-  console.log(sessionStorage.getItem('time'));
-
 
 
   //
-  // var playBall =document.getElementsByTagName('button')[2];
-  // playBall.hidden = false;
+  var playBall =document.getElementsByTagName('button')[2];
+  playBall.hidden = false;
   //
   var button0 =document.getElementsByTagName('button')[0];
   button0.hidden = true;
@@ -72,6 +68,13 @@ var handleCommentResume = function(event) {
   event.preventDefault();
   if (!event.target.name.value || !event.target.password.value || !event.target.zip.value) {
     // return alert("Please complete all fields.");
+
+
+    var wrong = document.getElementById('alert');
+    var wrong2 = document.createElement('p')
+    var wrong3 = document.createTextNode('Please, complete all fields.');
+    wrong.appendChild(wrong2);
+     wrong2.appendChild(wrong3);
   };
 
   userInput =[];
@@ -94,17 +97,19 @@ var handleCommentResume = function(event) {
     (localStorage.getItem(users[0].name) !== JSON.stringify(users)) {
     localStorage.setItem(users[0].name, JSON.stringify(users));
     users = JSON.parse(localStorage.getItem(users[0].name));
+    // alert('wrong');
 
-    // var wrong = document.getElementById('alert');
+
+    var wrong = document.getElementById('alert');
     var wrong2 = document.createElement('p')
-    var wrong3 = document.createTextNode('Wrong password try again');
+    var wrong3 = document.createTextNode('Please, try again.');
     wrong.appendChild(wrong2);
      wrong2.appendChild(wrong3);
 
 
 
   } else {
-    // location.assign("test2.html");
+    location.assign("test2.html");
     // playBall();
   }
   //
