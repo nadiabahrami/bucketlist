@@ -65,18 +65,6 @@ a {
   height: 100%;
 }
 
-.face.front{
-  background:#000;
-}
-
-.face.back {
-  display: block;
-  box-sizing: border-box;
-  padding: 20px;
-  text-align: left;
-  background-color: #333;
-}
-
 .container {
   perspective: 800px;
 }
