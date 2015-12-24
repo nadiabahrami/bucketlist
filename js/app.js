@@ -44,6 +44,9 @@ function Stadium (name, city, team, long, lat){
   for (var i = 0; i < stadiumInfo.length; i++){
     allStadiums.push(new Stadium(stadiumInfo[i][0], stadiumInfo[i][1], stadiumInfo[i][2], stadiumInfo[i][3], stadiumInfo[i][4]));
   }
+  var userKey = localStorage.getItem("active_user");
+  var userZip = JSON.parse(localStorage.getItem(userKey))[0].zip;
+  console.log(userZip);
 })();
 
 function initMap() {
@@ -61,8 +64,6 @@ function initMap() {
 });
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-  var userKey = localStorage.getItem("active_user");
-  var userZip = JSON.parse(localStorage.getItem(userKey))[0].zip;
   var waypts = [];
   var checkboxArray = userSelects.coordinates;
   for (var i = 0; i < checkboxArray.length; i++) {
@@ -73,8 +74,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   }
 
   directionsService.route({
-    origin: "userZip",
-    destination: "userZip",
+    origin: "Seattle, WA",
+    destination: "Seattle, WA",
     waypoints: waypts,
     optimizeWaypoints: true,
     travelMode: google.maps.TravelMode.DRIVING
@@ -149,7 +150,3 @@ var userSelects = {
     }
   },
 };
-
-var latLng = {
-  
-}
