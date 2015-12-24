@@ -1,5 +1,5 @@
 var stadiumInfo = [
-  ["AT&T Park", "San Francisco, CA", "Giants", "37.778473", "-122.389595"],
+  ["AT&T Park", "San Francisco, CA", "San Francisco Giants", "37.778473", "-122.389595"],
   ["Angel Stadium Anaheim", "Anaheim, CA", "Los Angeles Angels", "33.799925", "-117.883194"],
   ["Busch Stadium", "St. Louis, MO", "St. Louis Cardinals", "38.622317", "-90.193891"],
   ["Chase Field", "Phoenix, AZ", "Arizona Diamondbacks", "33.445526", "-112.066721"],
@@ -30,7 +30,6 @@ var stadiumInfo = [
   ["Wrigley Field", "Chicago, IL", "Chicago Cubs", "41.947856", "-87.655887"],
   ["Yankee Stadium", "Bronx, NY", "New York Yankees", "40.829327", "-73.927735"]
 ];
-
 var allStadiums = [];
 
 function Stadium (name, city, team, long, lat){
@@ -62,6 +61,8 @@ function initMap() {
 });
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  var userKey = localStorage.getItem("active_user");
+  var userZip = JSON.parse(localStorage.getItem(userKey))[0].zip;
   var waypts = [];
   var checkboxArray = userSelects.coordinates;
   for (var i = 0; i < checkboxArray.length; i++) {
@@ -72,8 +73,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   }
 
   directionsService.route({
-    origin: "Seattle, WA",
-    destination: "Seattle, WA",
+    origin: "userZip",
+    destination: "userZip",
     waypoints: waypts,
     optimizeWaypoints: true,
     travelMode: google.maps.TravelMode.DRIVING
@@ -93,9 +94,9 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       }
     } else {
       window.alert('Directions request failed due to ' + status);
-    }
-  });
-}
+      }
+    });
+  }
 }
 
 var inputHandler = {
@@ -148,3 +149,7 @@ var userSelects = {
     }
   },
 };
+
+var latLng = {
+  
+}
