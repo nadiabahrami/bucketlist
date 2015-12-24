@@ -37,9 +37,18 @@ box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
 
 }
 
-#prompt{
+
+.prompt {
   color: white;
   line-height: 1.5;
+  display: flex;
+  flex-flow: wrap;
+  width: 25%;
+  padding: 0 auto;
+  margin: 0 0 0 10%;
+  /*margin: 0% 90% 0% 10%;*/
+  font-size: 1.5em;
+
 }
 
 
@@ -187,6 +196,11 @@ input[placeholder] {
 
 }
 
+#resume {
+  font-size: 1.5em;
+  color: white:
+}
+
 /*@keyframes pulse {
   0% {
     color:  #c50322;
@@ -195,3 +209,7 @@ input[placeholder] {
     color:rgba(255, 255, 255, 0)
 
 }*/
+.alert {
+  color: white;
+  font-size: 1.5;
+}
