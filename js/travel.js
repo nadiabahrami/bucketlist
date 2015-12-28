@@ -53,28 +53,7 @@ function Stadium (name, city, team, long, lat, pic){
   }
 })();
 
-
-var inputHandler = {
-  listContainer: document.getElementById('comment'),
-
-  createStadiumList: function(){
-    var stadiumList = document.createElement("ul");
-    for (var i = 0; i < allStadiums.length; i++){
-      var stadiumEl = document.createElement("li");
-      var checkbox = document.createElement('input');
-      checkbox.type = "checkbox";
-      checkbox.id = allStadiums[i].name.toLowerCase().replace(" ", "_");
-      checkbox.name= "checky"
-      var label = document.createElement('label')
-      label.htmlFor = "id";
-      label.appendChild(document.createTextNode(allStadiums[i].team));
-      stadiumEl.appendChild(checkbox);
-      stadiumEl.appendChild(label);
-      stadiumList.appendChild(stadiumEl);
-    }
-    inputHandler.listContainer.appendChild(stadiumList);
-  },
-
+var inputHandler = { //Creates the form drop box
   dropPop: document.getElementById('drop'),
 
   createOptions: function (){
@@ -87,35 +66,69 @@ var inputHandler = {
       inputHandler.dropPop.appendChild(choice);
     };
   }
+};
 
-}
+inputHandler.createOptions();
 
-inputHandler.createStadiumList();
-inputHandler.createOptions()
+var userKey = localStorage.getItem("active_user");
+var userArray = JSON.parse(localStorage.getItem(userKey));
+var fullComments = [];
+var tempComment = [];
 
-var userSelects = {
-  checkedEls: [],
-  checkedObj: [],
-  coordinates: [],
-  planTrip: document.getElementById('button'),
+var userCreates = {
+  user: [],
+  userComment: [],
+  logContainer: document.getElementById('been'),
+  // newComment: function (image, date, url, blub){
+  //   this.image = image;
+  //   this.date = date;
+  //   this.url = url;
+  //   this.blurb = blurb;
+  // },
 
-  checkboxCheck: function(){
-    var yes = document.getElementsByName("checky");
-    for ( var i = 0; i < yes.length; i++){
-      if(yes[i].checked){
-        userSelects.checkedEls.push(yes[i].id);
+  createArray: function(){
+    this.team = drop.value;
+    for(var i=0; i<allStadiums.length;i++){
+      var tempName = allStadiums[i].name.toLowerCase().replace(" ", "_");
+      if(this.team == tempName){
+        this.team = allStadiums[i].pic;
+        tempComment.push(this.team);
       }
     };
-    for(var i = 0; i < this.checkedEls.length; i++){
-      for(var j = 0; j < allStadiums.length; j++){
-        var tempString = allStadiums[j].name.toLowerCase().replace(" ", "_");
-        if(this.checkedEls[i] === tempString){
-          var mini =[];
-          this.checkedObj.push(allStadiums[j]);
-          mini.push(allStadiums[j].lat, allStadiums[j].long);
-          this.coordinates.push(mini);
-        }
-      }
-    }
+    this.date = date.value;
+    tempComment.push(this.date);
+    this.url = url.value;
+    tempComment.push(this.url);
+    this.words = words.value;
+    tempComment.push(this.words);
+    console.log(tempComment);
+    
   },
+
+  createLog:function(){
+    console.log("made it")
+    var intial = document.createElement("div");
+    for(var i=0; i<this.user.length; i++){
+      var second = document.createElement("div");
+      var third = document.createElement("img");
+      third.href = this.user[i][0];
+      second.appendChild(third);
+      initial.appendChild(second);
+      var fourth = document.createElement("div");
+      var fifth = document.createElement("p")
+      fifth.textContent = this.user[i][1];
+      fourth.appendChild(fifth);
+      var sixth = document.createElement("a");
+      sixth.href = this.user[i][2];
+      sixth.textContent = this.user[i][2];
+      fourth.appendChild(sixth);
+      inital.appendChild(fourth);
+    }
+    logContainer.appendChild(initial);
+  }
 };
+
+document.getElementById('submit').addEventListener('click', function(event) {
+  console.log("before values");
+  userCreates.createArray();
+});
