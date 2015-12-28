@@ -173,3 +173,5 @@ var userSelects = {
 //   });
 //   alert('Latitude: ' + lat + ' Logitude: ' + lng);
 // }
+
+console.log(document.getElementsByTagName('li')[2]);
