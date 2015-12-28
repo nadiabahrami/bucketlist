@@ -164,26 +164,5 @@ var userSelects = {
     }
   },
 };
-<<<<<<< HEAD
-// geoCode = {
-//   lat: '',
-//   lng: '',
-//   address: inputHandler.userZip,
-//   geocoder: new Google.maps.Geocoder(),
-//   geocoder.geocode( { 'address': address}, function(results, status) {
-//     if (status == google.maps.GeocoderStatus.OK) {
-//        lat = results[0].geometry.location.lat();
-//        lng = results[0].geometry.location.lng();
-//       });
-//     } else {
-//       alert("Geocode was not successful for the following reason: " + status);
-//     }
-//   });
-//   alert('Latitude: ' + lat + ' Logitude: ' + lng);
-// }
-
-console.log(document.getElementsByTagName('li')[2]);
-=======
 
 inputHandler.createStadiumList();
->>>>>>> dab2eb9b92f784d4bd1eac371e07b543448e4a35
