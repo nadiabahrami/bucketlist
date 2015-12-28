@@ -115,16 +115,11 @@ ul li {
   /*color: blue;*/
 }
 
-input[type=checkbox]:checked + label {
-  background-color: blue;
-  color:white;
-
-
-}
 
 
 
-}
+
+
 
 .footer {
   font-family: 'Roboto', sans-serif;

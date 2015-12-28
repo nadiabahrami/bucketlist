@@ -126,7 +126,8 @@ var inputHandler = {
       var checkbox = document.createElement('input');
       checkbox.type = "checkbox";
       checkbox.id = allStadiums[i].name.toLowerCase().replace(" ", "_");
-      checkbox.name= "checky"
+      checkbox.name= "checky";
+      checkbox.className = "classy";
       var label = document.createElement('label')
       label.htmlFor = "id";
       label.appendChild(document.createTextNode(allStadiums[i].team));
@@ -166,3 +167,12 @@ var userSelects = {
 };
 
 inputHandler.createStadiumList();
+
+
+
+document.querySelector('.classy').onclick = function(){
+  console.log('xx');
+
+  document.querySelector('.classy').style.color = 'blue';
+
+}
