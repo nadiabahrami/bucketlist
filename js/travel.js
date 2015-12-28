@@ -53,6 +53,14 @@ function Stadium (name, city, team, long, lat, pic){
   }
 })();
 
+var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    var imgObj = new Image();
+    imgObj.onload = function() {
+      context.drawImage(imgObj,0,0);
+};
+imgObj.src = "img/bluemap.png";
+
 var inputHandler = { //Creates the form drop box
   dropPop: document.getElementById('drop'),
 
