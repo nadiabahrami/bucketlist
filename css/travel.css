@@ -2,8 +2,10 @@
   border: 4px dotted;
 }*/
 
-body {
+article #div {
   display: flex;
+  flex-wrap: wrap;
+  flex-flow: row;
 }
 
 h1 {
@@ -17,7 +19,7 @@ h1 {
   margin: 0 auto;
 }
 
-#been div p{
-  flex-flow: wrap;
-  flex-direction: row;
+#been #div {
+  flex-wrap: wrap;
+
 }
