@@ -49,20 +49,6 @@ h1 {
   font-weight: bold;
   padding: 20px 40px;
   text-align: center;
-
-/*
-  -webkit-box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
--moz-box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
-box-shadow: 15px 42px 111px -38px rgba(0,0,0,0.75);
-*/
-
-
-/*-moz-box-shadow:    inset 0 0 10px #000000;
--webkit-box-shadow: inset 0 0 10px #000000;
-box-shadow:         inset 0 0 10px #000000;
-*/
-
-
 }
 
 #map {
@@ -115,16 +101,6 @@ ul li {
   /*color: blue;*/
 }
 
-input[type=checkbox]:checked + label {
-  background-color: blue;
-  color:white;
-
-
-}
-
-
-
-}
 
 .footer {
   font-family: 'Roboto', sans-serif;
@@ -183,6 +159,8 @@ text-decoration: none;
   -webkit-box-shadow: inset 0 0 10px #000000;
   box-shadow:         inset 0 0 10px #000000;
   padding: 1em;
+  text-align: center;
+  font-size:1.5em;
 
 }
 
