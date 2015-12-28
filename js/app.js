@@ -112,11 +112,17 @@ var inputHandler = {
     console.log(userZip);
     var stadiumList = document.createElement("ul");
     for (var i = 0; i < allStadiums.length; i++){
-      var stadiumEl = document.createElement("li");
+      var stadiumEl = document.createElement("li")
+          stadiumEl.className = "classy";
+      ;
+
       var checkbox = document.createElement('input');
       checkbox.type = "checkbox";
       checkbox.id = allStadiums[i].name.toLowerCase().replace(" ", "_");
-      checkbox.name= "checky"
+      checkbox.name= "checky";
+      checkbox.className = "classyX";
+
+
       var label = document.createElement('label')
       label.htmlFor = "id";
       label.appendChild(document.createTextNode(allStadiums[i].team));
@@ -137,11 +143,13 @@ var userSelects = {
   coordinates: [],
   planTrip: document.getElementById('button'),
 
+
   checkboxCheck: function(){
     var yes = document.getElementsByName("checky");
     for ( var i = 0; i < yes.length; i++){
       if(yes[i].checked){
         userSelects.checkedEls.push(yes[i].id);
+
       }
     };
     for(var i = 0; i < this.checkedEls.length; i++){
@@ -157,6 +165,8 @@ var userSelects = {
     }
   },
 };
+
+
 // geoCode = {
 //   lat: '',
 //   lng: '',
@@ -174,4 +184,26 @@ var userSelects = {
 //   alert('Latitude: ' + lat + ' Logitude: ' + lng);
 // }
 
-console.log(document.getElementsByTagName('li')[2]);
+
+
+//
+//
+// for (var i = 0; i<31; i++){
+// document.getElementsByClassName('classyX').onclick = function(){
+//   console.log('glassware');
+// }
+// }
+
+
+
+
+var z = document.querySelector('li');
+
+z.onclick = function(){
+  console.log('stuff');
+  console.log(z);
+  ('li').color = 'yellow';
+  z.style.backgroundColor = 'blue';
+  z.style.color = 'white';
+
+}
