@@ -1,3 +1,23 @@
 /*body *{
   border: 4px dotted;
 }*/
+
+body {
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+  padding: 0 auto;
+}
+
+#myCanvas {
+  align-content: center;
+  display:flex;
+  margin: 0 auto;
+}
+
+#been div p{
+  flex-flow: wrap;
+  flex-direction: row;
+}
