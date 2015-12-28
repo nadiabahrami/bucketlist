@@ -42,7 +42,13 @@ function Stadium (name, city, team, long, lat){
 
 (function makeStadiums (){
   for (var i = 0; i < stadiumInfo.length; i++){
-    allStadiums.push(new Stadium(stadiumInfo[i][0], stadiumInfo[i][1], stadiumInfo[i][2], stadiumInfo[i][3], stadiumInfo[i][4]));
+    allStadiums.push(new Stadium(
+      stadiumInfo[i][0],
+      stadiumInfo[i][1],
+      stadiumInfo[i][2],
+      stadiumInfo[i][3],
+      stadiumInfo[i][4]
+    ));
   }
 })();
 
@@ -56,27 +62,32 @@ function initMap() {
   directionsDisplay.setMap(map);
 
   document.getElementById('submit').addEventListener('click', function() {
+    userSelects.coordinates = [];
     userSelects.checkboxCheck();
     calculateAndDisplayRoute(directionsService, directionsDisplay);
 });
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  var input = document.getElementById('address-box');
   var waypts = [];
-  for(var i = 0; i < waypts.length; i++){
-    waypts[i] = null;
-  }
-  waypts = [];
-  var checkboxArray = userSelects.coordinates;
+  var checkboxArray = [];
+  checkboxArray = userSelects.coordinates;
   for (var i = 0; i < checkboxArray.length; i++) {
     waypts.push({
       location: new google.maps.LatLng(parseFloat(checkboxArray[i][1]), parseFloat(checkboxArray[i][0])),
       stopover: true
     });
   }
+  if (input.value !== ''){
+    waypts.push({
+      location: input.value,
+      stopover: true
+    });
+  }
 
   directionsService.route({
     origin: "Seattle, WA",
-    destination: "Seattle, WA",
+    destination: "Ballard, WA",
     waypoints: waypts,
     optimizeWaypoints: true,
     travelMode: google.maps.TravelMode.DRIVING
@@ -109,7 +120,6 @@ var inputHandler = {
   createStadiumList: function(){
     userKey = localStorage.getItem("active_user");
     userZip = JSON.parse(localStorage.getItem(userKey))[0].zip;
-    console.log(userZip);
     var stadiumList = document.createElement("ul");
     for (var i = 0; i < allStadiums.length; i++){
       var stadiumEl = document.createElement("li");
@@ -126,30 +136,27 @@ var inputHandler = {
     }
     inputHandler.listContainer.appendChild(stadiumList);
   }
-}
-
-
-inputHandler.createStadiumList();
+};
 
 var userSelects = {
-  checkedEls: [],
-  checkedObj: [],
   coordinates: [],
   planTrip: document.getElementById('button'),
 
   checkboxCheck: function(){
+    var checkedEls = [];
+    var checkedObj = [];
     var yes = document.getElementsByName("checky");
-    for ( var i = 0; i < yes.length; i++){
+    for (var i = 0; i < yes.length; i++){
       if(yes[i].checked){
-        userSelects.checkedEls.push(yes[i].id);
+        checkedEls.push(yes[i].id);
       }
     };
-    for(var i = 0; i < this.checkedEls.length; i++){
+    for(var i = 0; i < checkedEls.length; i++){
       for(var j = 0; j < allStadiums.length; j++){
         var tempString = allStadiums[j].name.toLowerCase().replace(" ", "_");
-        if(this.checkedEls[i] === tempString){
-          var mini =[];
-          this.checkedObj.push(allStadiums[j]);
+        if(checkedEls[i] === tempString){
+          var mini = [];
+          checkedObj.push(allStadiums[j]);
           mini.push(allStadiums[j].lat, allStadiums[j].long);
           this.coordinates.push(mini);
         }
@@ -157,6 +164,7 @@ var userSelects = {
     }
   },
 };
+<<<<<<< HEAD
 // geoCode = {
 //   lat: '',
 //   lng: '',
@@ -175,3 +183,7 @@ var userSelects = {
 // }
 
 console.log(document.getElementsByTagName('li')[2]);
+=======
+
+inputHandler.createStadiumList();
+>>>>>>> dab2eb9b92f784d4bd1eac371e07b543448e4a35
