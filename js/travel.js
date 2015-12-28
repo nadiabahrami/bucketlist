@@ -56,12 +56,11 @@ function Stadium (name, city, team, long, lat, pic){
 var canvas = document.getElementById('myCanvas');
     var context = canvas.getContext('2d');
     var imgObj = new Image();
-    imgObj.src = "img/bluemap.png";
     imgObj.onload = function() {
       context.drawImage(imgObj,0,0);
 };
-
-context.drawImage(30,20,10,10);
+imgObj.src = "img/bluemap.png";
+context.fillRect(76,20,10,10); 
 
 var inputHandler = { //Creates the form drop box
   dropPop: document.getElementById('drop'),
@@ -79,6 +78,15 @@ var inputHandler = { //Creates the form drop box
 };
 
 inputHandler.createOptions();
+
+
+var styleResponses = function (event) {
+    var me = event.target
+    ,   square = document.getElementById("styling");
+
+    me.setAttribute("disabled", "disabled");
+
+}
 
 
 
