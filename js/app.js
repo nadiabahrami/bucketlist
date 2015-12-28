@@ -44,9 +44,6 @@ function Stadium (name, city, team, long, lat){
   for (var i = 0; i < stadiumInfo.length; i++){
     allStadiums.push(new Stadium(stadiumInfo[i][0], stadiumInfo[i][1], stadiumInfo[i][2], stadiumInfo[i][3], stadiumInfo[i][4]));
   }
-  var userKey = localStorage.getItem("active_user");
-  var userZip = JSON.parse(localStorage.getItem(userKey))[0].zip;
-  console.log(userZip);
 })();
 
 function initMap() {
@@ -65,6 +62,10 @@ function initMap() {
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var waypts = [];
+  for(var i = 0; i < waypts.length; i++){
+    waypts[i] = null;
+  }
+  waypts = [];
   var checkboxArray = userSelects.coordinates;
   for (var i = 0; i < checkboxArray.length; i++) {
     waypts.push({
@@ -101,9 +102,14 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 }
 
 var inputHandler = {
+  userKey: '',
+  userZip: '',
   listContainer: document.getElementById('list'),
 
   createStadiumList: function(){
+    userKey = localStorage.getItem("active_user");
+    userZip = JSON.parse(localStorage.getItem(userKey))[0].zip;
+    console.log(userZip);
     var stadiumList = document.createElement("ul");
     for (var i = 0; i < allStadiums.length; i++){
       var stadiumEl = document.createElement("li");
@@ -150,3 +156,19 @@ var userSelects = {
     }
   },
 };
+// geoCode = {
+//   lat: '',
+//   lng: '',
+//   address: inputHandler.userZip,
+//   geocoder: new Google.maps.Geocoder(),
+//   geocoder.geocode( { 'address': address}, function(results, status) {
+//     if (status == google.maps.GeocoderStatus.OK) {
+//        lat = results[0].geometry.location.lat();
+//        lng = results[0].geometry.location.lng();
+//       });
+//     } else {
+//       alert("Geocode was not successful for the following reason: " + status);
+//     }
+//   });
+//   alert('Latitude: ' + lat + ' Logitude: ' + lng);
+// }
