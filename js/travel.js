@@ -83,7 +83,7 @@ var userArray = JSON.parse(localStorage.getItem(userKey));
 
 var fullComments = [];
 var tempComment = [];
-var user = [];
+var userComments = [];
 
 var userCreates = {
   logContainer: document.getElementById('been'),
@@ -105,9 +105,47 @@ var userCreates = {
     tempComment.push(this.url);
     this.words = words.value;
     tempComment.push(this.words);
-    console.log(tempComment);
     fullComments.push(tempComment);
     console.log(fullComments);
+    var mini = [];
+    mini = userArray;
+    mini[1]= fullComments;
+    console.log(mini);
+    if(userComments.length ===0){
+      userComments.push(mini);
+      console.log("fasle");
+      console.log(userComments);
+    }else{
+      for(var i = 0; i<userComments.length; i++){
+        console.log("you made it");
+        if(mini[i].name===userArray[0].name){
+          userComments[i] = mini;
+          console.log("true");
+          console.log(userComments);
+        }else{
+          userComments.push(mini);
+          console.log("fasle");
+          console.log(userComments);
+        }
+      };
+    }
+    console.log(mini[0].name);
+
+    // var mini = [];
+    // console.log(mini); //log
+    // mini = userArray;
+    // console.log(mini);
+    // if(mini.comments){
+    //   mini.comments=fullComments;
+    //   console.log( "true");
+    //   console.log(mini);
+    // }else{
+    //   mini.comments=fullComments;
+    //   console.log("false");
+    //   console.log(mini)
+    // }
+    // console.log(userArray);
+
   },
 
   createLog:function(){
