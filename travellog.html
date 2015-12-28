@@ -12,23 +12,39 @@
     <header>
       <h1 class="stitching">Travel Log</h1>
     </header>
-    <section> <p>static map</p></section>
     <section>
-      <h1>Where I've gone</h1>
-      <img src=""/>
+      <p>Had a blast on the atletic road trip of your dreams?  More adventures ahead?  Keep your trip stats right here in our centralized log.  Easy.  Convenient.   To keep you on the road to your next destination.</p>
     </section>
     <section>
-      <fieldset id ="list"></fieldset>
-      <button type="submit" id="submit">Get my trip!</button>
+      <h1>Where I've gone</h1>
+      <!-- <canvas id = "animate" width ="800px" height ="600px"> -->
+        <img src="img/bluemap.png"/>
+      <!-- </canvas> -->
+    </section>
+    <section>
+      <form action="" id="team">
+        <fieldset id ="list">
+          <select action="" id ="drop"></select>
+          <label for ="date">Date:<label>
+            <input id="date" type="text" name="date" size="12" maxlength="30" />
+          <label for ="url">Photo album URL:<label>
+            <input id = "url" type="text" name="url" size= "12"/>
+          <label for ="words">Comment:<label>
+            <input id = "words" type="text" name="words" size="12"/>
+        </fieldset>
+      </form>
+      <button type="submit" id="log">Log trip!</button>
     </section>
     <section>
       <ul id="been"></ul>
     </section>
-        <footer>
+    <section>
+      <fieldset id ="comment"></fieldset>
+    </section>
+    <footer class="footer">
       <a href="about.html">About the Authors</a>
       <a href="map.html">Itinerary</a>
     </footer>
-    <script src="js/app.js" type="text/javascript"></script>
     <script src="js/travel.js" type="text/javascript"></script>
   </body>
 </html>
