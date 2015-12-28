@@ -128,6 +128,7 @@ var inputHandler = {
   }
 }
 
+
 inputHandler.createStadiumList();
 
 var userSelects = {
