@@ -124,16 +124,20 @@ var userCreates = {
     console.log(mini);
     if(userComments.length ===0){
       userComments.push(mini);
-      console.log("fasle");
+      console.log("firstime");
       console.log(userComments);
     }else{
-      for(var i = 0; i<userComments.length; i++){
+      var number = userComments.length
+      console.log(number);
+      for(var i = 0; i<number; i++){
         console.log("you made it");
-        if(mini[i].name===userArray[0].name){
+        if(userComments[i][0].name===userArray[0].name){
           userComments[i] = mini;
           console.log("true");
           console.log(userComments);
         }else{
+          console.log(userComments);
+          console.log(mini);
           userComments.push(mini);
           console.log("fasle");
           console.log(userComments);
@@ -179,6 +183,7 @@ var userCreates = {
 
 if(localStorage.destinations){
   userComments = JSON.parse(localStorage.getItem("destinations"));
+  console.log(userComments);
   for(var k =0; k<userComments.length; k++){
     if(userComments[k][0].name===userKey){
       for(var j=0; j< userComments[k][1].length; j++){
@@ -188,8 +193,16 @@ if(localStorage.destinations){
       userCreates.createLog(shuttle);
       };
     }
+    // else{
+    //   console.log("I am here");
+    //   k++;
+    //   userComments.push([]);
+    //   console.log(userComments);
+    // }
   };
 }
+
+
 console.log(userComments);
 
 document.getElementById('submit').addEventListener('click', function(event) {
