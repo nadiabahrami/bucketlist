@@ -1,5 +1,5 @@
 var stadiumInfo = [
-  ["AT&T Park", "San Francisco, CA", "Giants", "37.778473", "-122.389595"],
+  ["AT&T Park", "San Francisco, CA", "San Francisco Giants", "37.778473", "-122.389595"],
   ["Angel Stadium Anaheim", "Anaheim, CA", "Los Angeles Angels", "33.799925", "-117.883194"],
   ["Busch Stadium", "St. Louis, MO", "St. Louis Cardinals", "38.622317", "-90.193891"],
   ["Chase Field", "Phoenix, AZ", "Arizona Diamondbacks", "33.445526", "-112.066721"],
@@ -30,7 +30,6 @@ var stadiumInfo = [
   ["Wrigley Field", "Chicago, IL", "Chicago Cubs", "41.947856", "-87.655887"],
   ["Yankee Stadium", "Bronx, NY", "New York Yankees", "40.829327", "-73.927735"]
 ];
-
 var allStadiums = [];
 
 function Stadium (name, city, team, long, lat){
@@ -63,6 +62,10 @@ function initMap() {
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var waypts = [];
+  for(var i = 0; i < waypts.length; i++){
+    waypts[i] = null;
+  }
+  waypts = [];
   var checkboxArray = userSelects.coordinates;
   for (var i = 0; i < checkboxArray.length; i++) {
     waypts.push({
@@ -93,15 +96,20 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
       }
     } else {
       window.alert('Directions request failed due to ' + status);
-    }
-  });
-}
+      }
+    });
+  }
 }
 
 var inputHandler = {
+  userKey: '',
+  userZip: '',
   listContainer: document.getElementById('list'),
 
   createStadiumList: function(){
+    userKey = localStorage.getItem("active_user");
+    userZip = JSON.parse(localStorage.getItem(userKey))[0].zip;
+    console.log(userZip);
     var stadiumList = document.createElement("ul");
     for (var i = 0; i < allStadiums.length; i++){
       var stadiumEl = document.createElement("li");
@@ -148,3 +156,19 @@ var userSelects = {
     }
   },
 };
+// geoCode = {
+//   lat: '',
+//   lng: '',
+//   address: inputHandler.userZip,
+//   geocoder: new Google.maps.Geocoder(),
+//   geocoder.geocode( { 'address': address}, function(results, status) {
+//     if (status == google.maps.GeocoderStatus.OK) {
+//        lat = results[0].geometry.location.lat();
+//        lng = results[0].geometry.location.lng();
+//       });
+//     } else {
+//       alert("Geocode was not successful for the following reason: " + status);
+//     }
+//   });
+//   alert('Latitude: ' + lat + ' Logitude: ' + lng);
+// }
