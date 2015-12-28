@@ -52,15 +52,17 @@ function Stadium (name, city, team, long, lat, pic){
     allStadiums.push(new Stadium(stadiumInfo[i][0], stadiumInfo[i][1], stadiumInfo[i][2], stadiumInfo[i][3], stadiumInfo[i][4], stadiumInfo[i][5]));
   }
 })();
+var canvas = document.getElementById("myCanvas";
+var context = myCanvas.getContext("2d");
+var background = document.getElementById('background');
+var background = new Image();
+// background.src = "img/bluemap.png";
 
-var canvas = document.getElementById('myCanvas');
-    var context = canvas.getContext('2d');
-    var imgObj = new Image();
-    imgObj.onload = function() {
-      context.drawImage(imgObj,0,0);
-};
-imgObj.src = "img/bluemap.png";
-context.fillRect(76,20,10,10); 
+// background.onload = function(){
+    context.drawImage(background,0,0);
+}​
+
+// context.fillRect(76,3,10,10);
 
 var inputHandler = { //Creates the form drop box
   dropPop: document.getElementById('drop'),
