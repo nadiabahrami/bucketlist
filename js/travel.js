@@ -72,21 +72,16 @@ inputHandler.createOptions();
 
 var userKey = localStorage.getItem("active_user");
 var userArray = JSON.parse(localStorage.getItem(userKey));
+
 var fullComments = [];
 var tempComment = [];
+var user = [];
 
 var userCreates = {
-  user: [],
-  userComment: [],
   logContainer: document.getElementById('been'),
-  // newComment: function (image, date, url, blub){
-  //   this.image = image;
-  //   this.date = date;
-  //   this.url = url;
-  //   this.blurb = blurb;
-  // },
 
   createArray: function(){
+    tempComment = [];
     this.team = drop.value;
     for(var i=0; i<allStadiums.length;i++){
       var tempName = allStadiums[i].name.toLowerCase().replace(" ", "_");
@@ -97,38 +92,44 @@ var userCreates = {
     };
     this.date = date.value;
     tempComment.push(this.date);
+    this.date = "";
     this.url = url.value;
     tempComment.push(this.url);
     this.words = words.value;
     tempComment.push(this.words);
     console.log(tempComment);
-    
+    fullComments.push(tempComment);
+    console.log(fullComments);
   },
 
   createLog:function(){
-    console.log("made it")
-    var intial = document.createElement("div");
-    for(var i=0; i<this.user.length; i++){
+    for(var i=0; i<fullComments.length; i++){
+      var inital = document.createElement("div");
       var second = document.createElement("div");
       var third = document.createElement("img");
-      third.href = this.user[i][0];
+      third.src = fullComments[i][0];
       second.appendChild(third);
-      initial.appendChild(second);
+      inital.appendChild(second);
       var fourth = document.createElement("div");
       var fifth = document.createElement("p")
-      fifth.textContent = this.user[i][1];
+      fifth.textContent = fullComments[i][1];
       fourth.appendChild(fifth);
       var sixth = document.createElement("a");
-      sixth.href = this.user[i][2];
-      sixth.textContent = this.user[i][2];
+      sixth.href = fullComments[i][2];
+      sixth.textContent = fullComments[i][2];
       fourth.appendChild(sixth);
       inital.appendChild(fourth);
+      var seventh = document.createElement("div");
+      var eight = document.createElement("p");
+      eight.textContent = fullComments[i][3];
+      seventh.appendChild(eight);
+      inital.appendChild(seventh);
     }
-    logContainer.appendChild(initial);
+    this.logContainer.appendChild(inital);
   }
 };
 
 document.getElementById('submit').addEventListener('click', function(event) {
-  console.log("before values");
   userCreates.createArray();
+  userCreates.createLog();
 });
