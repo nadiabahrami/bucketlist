@@ -12,17 +12,7 @@ function User  (name, password, zip){
 var handleCommentNew = function(event){
   event.preventDefault();
 
-  if (!event.target.name.value || !event.target.password.value || !event.target.zip.value) {
-    // return alert("Please complete all fields.");
-    var incomplete = document.getElementById('alert');
-    var incomplete2 = document.createElement('p')
-    var incomplete3 = document.createTextNode('Please Complete All Fields');
-    incomplete.appendChild(incomplete2);
-      incomplete2.appendChild(incomplete3);
-  } else {
-    location.assign("map.html");
 
-  };
 
   userInput =[];
   userInput.push(event.target.name.value);
@@ -31,11 +21,59 @@ var handleCommentNew = function(event){
   var newUser = new User(userInput[0], userInput[1], userInput[2]);
   invisible();
 
-  localStorage.setItem(users[0].name, JSON.stringify(users));
-  users = JSON.parse(localStorage.getItem(users[0].name));
+  if (!event.target.name.value || !event.target.password.value || !event.target.zip.value) {
+    // return alert("Please complete all fields.");
+    var incomplete = document.getElementById('alert');
+    var incomplete2 = document.createElement('p')
+    var incomplete3 = document.createTextNode('Please Complete All Fields');
+    incomplete.appendChild(incomplete2);
+      incomplete2.appendChild(incomplete3);
 
-  localStorage.removeItem('active_user');
-  localStorage.setItem('active_user', users[0].name);
+  } else if (localStorage.hasOwnProperty(event.target.name.value)){
+    console.log('already here');
+    var wrong = document.getElementById('alert');
+    var wrong2 = document.createElement('p')
+    var wrong3 = document.createTextNode("That username is taken. Choose a unique one or try logging in. Maybe you've been here before.");
+    wrong.appendChild(wrong2);
+     wrong2.appendChild(wrong3);
+       localStorage.removeItem('active_user');
+
+        error();
+
+    //  invisible();
+    //  invisible2();
+    //  invisible3();
+     invisible4();
+
+  }
+
+
+  else {
+
+    localStorage.setItem(users[0].name, JSON.stringify(users));
+    users = JSON.parse(localStorage.getItem(users[0].name));
+
+    localStorage.removeItem('active_user');
+    localStorage.setItem('active_user', users[0].name);
+
+console.log('Welcome');
+    location.assign("map.html");
+  };
+
+  // userInput =[];
+  // userInput.push(event.target.name.value);
+  // userInput.push(event.target.password.value);
+  // userInput.push(parseInt(event.target.zip.value));
+  // var newUser = new User(userInput[0], userInput[1], userInput[2]);
+  // invisible();
+
+  // localStorage.setItem(users[0].name, JSON.stringify(users));
+  // users = JSON.parse(localStorage.getItem(users[0].name));
+
+
+
+  // localStorage.removeItem('active_user');
+  // localStorage.setItem('active_user', users[0].name);
 
 
 active_users = users[0];
@@ -53,17 +91,35 @@ console.log(active_users);
 
 
   console.log(playBall);
+
+
   //
-  var button0 =document.getElementsByTagName('button')[0];
-  button0.hidden = false;
+  // var button0 =document.getElementsByTagName('button')[0];
+  // button0.hidden = false;
 
   event.target.name.value = null;
   event.target.password.value = null;
   event.target.zip.value = null;
 }
 
+
+
+
+
+
+
+
 var handleCommentResume = function(event) {
   event.preventDefault();
+
+  userInput =[];
+  userInput.push(event.target.name.value);
+  userInput.push(event.target.password.value);
+  userInput.push(parseInt(event.target.zip.value));
+
+  var newUser = new User(userInput[0], userInput[1], userInput[2]);
+
+
   if (!event.target.name.value || !event.target.password.value || !event.target.zip.value) {
     // return alert("Please complete all fields.");
 
@@ -74,21 +130,22 @@ var handleCommentResume = function(event) {
      wrong2.appendChild(wrong3);
   };
 
-  userInput =[];
-  userInput.push(event.target.name.value);
-  userInput.push(event.target.password.value);
-  userInput.push(parseInt(event.target.zip.value));
+  // userInput =[];
+  // userInput.push(event.target.name.value);
+  // userInput.push(event.target.password.value);
+  // userInput.push(parseInt(event.target.zip.value));
+  //
+  // var newUser = new User(userInput[0], userInput[1], userInput[2]);
 
-  var newUser = new User(userInput[0], userInput[1], userInput[2]);
 
+  // localStorage.setItem('users', JSON.stringify(users));
 
-  localStorage.setItem('users', JSON.stringify(users));
   var restoredUser = JSON.parse(localStorage.getItem('users'));
   var restoredUserPW = JSON.parse(localStorage.getItem(users[0].name));
 
 
   localStorage.removeItem('active_user');
-  localStorage.setItem('active_user', users[0].name);
+  // localStorage.setItem('active_user', users[0].name);
 
   if
     (localStorage.getItem(users[0].name) !== JSON.stringify(users)) {
@@ -97,7 +154,7 @@ var handleCommentResume = function(event) {
 
     var wrong = document.getElementById('alert');
     var wrong2 = document.createElement('p')
-    var wrong3 = document.createTextNode('Please, try again. Case-sensitive.');
+    var wrong3 = document.createTextNode('Try again. Also, remember -- Case-sensitive.');
     wrong.appendChild(wrong2);
      wrong2.appendChild(wrong3);
     //  batterUp();
@@ -105,13 +162,16 @@ var handleCommentResume = function(event) {
     //  invisible();
     // location.assign("sBUIndex3.html");
 invisible();
-invisible2();
+invisible4();
 invisible3();
+invisible2();
 error();
 
 
   } else {
+      localStorage.setItem('active_user', users[0].name);
     location.assign("map.html");
+
     // playBall();
   }
   //
@@ -138,7 +198,6 @@ function begin(){
 
 
 
-
 function batterUp(){
   var hideName = document.getElementsByTagName('form')[0];
   hideName.hidden= false;
@@ -161,6 +220,11 @@ function invisible2(){
 function invisible3(){
   var button1 = document.getElementsByTagName('button')[1];
   button1.hidden=true;
+}
+
+function invisible4(){
+  var button3 = document.getElementsByTagName('button')[0];
+  button3.hidden=true;
 }
 
 invisible2();
