@@ -92,6 +92,7 @@ ul {
 ul li {
 	flex: 1 0 200px;
   box-sizing: border-box;
+  background: white;
   background: #eeeeee;
 
   /*background-color: grey;*/
@@ -101,6 +102,10 @@ ul li {
   /*color: blue;*/
 }
 
+ li:hover{
+   background-color:#06339C;
+   color:white;
+ }
 
 .footer {
   font-family: 'Roboto', sans-serif;
