@@ -157,22 +157,30 @@ var userCreates = {
   createLog:function(shuttle){
     for(var i=0; i<fullComments.length; i++){
       var inital = document.createElement("div");
+      inital.id = "main"
       var second = document.createElement("div");
+      second.id = "imgDiv";
       var third = document.createElement("img");
+      third.id = "logoImg"
       third.src = shuttle[0];
       second.appendChild(third);
       inital.appendChild(second);
       var fourth = document.createElement("div");
+      fourth.id = "topEdge";
       var fifth = document.createElement("p")
+      fifth.id="pTop";
       fifth.textContent = shuttle[1];
       fourth.appendChild(fifth);
       var sixth = document.createElement("a");
+      sixth.id = "linkTop"
       sixth.href = shuttle[2];
       sixth.textContent = shuttle[2];
       fourth.appendChild(sixth);
       inital.appendChild(fourth);
       var seventh = document.createElement("div");
+      seventh.id = "bottom";
       var eight = document.createElement("p");
+      eight.id = "pBottom";
       eight.textContent = shuttle[3];
       seventh.appendChild(eight);
       inital.appendChild(seventh);

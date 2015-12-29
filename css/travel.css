@@ -1,9 +1,48 @@
-/*body *{
+body *{
   border: 4px dotted;
-}*/
-
+}
+div *{
+  border-color: blue;
+}
 body {
   display: flex;
+}
+#main{
+  display: flex;
+  border:2px solid black;
+}
+
+#imgDiv{
+  width: 15%;
+  height:15em;
+  display: flex;
+  border:2px solid black;
+}
+
+#logoImg{
+  width:100%;
+  margin: auto 0px;
+  border:none;
+}
+
+#topEdge {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+#pTop{
+
+}
+#linkTop{
+
+}
+
+#bottom{
+  width:50%;
+}
+
+#pBottom{
+
 }
 
 h1 {
