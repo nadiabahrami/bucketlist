@@ -1,15 +1,23 @@
-body *{
-  border: 4px dotted;
-}
-div *{
-  border-color: blue;
-}
+
 body {
   display: flex;
 }
+#introTravel{
+  margin: 0% 22.5%;
+}
+
+fieldset label{
+  margin-left: 1em;
+}
+
+select{
+  margin-left: 18%;
+}
+
 #main{
   display: flex;
   border:2px solid black;
+  margin: 2% 6%;
 }
 
 #imgDiv{
@@ -25,24 +33,37 @@ body {
   border:none;
 }
 
+#ninth{
+  width: 100%;
+}
 #topEdge {
   display: inline-flex;
   justify-content: space-between;
+  width:99.7%;
+  border:2px solid black;
+  background-color: #c50322;
 }
 
 #pTop{
+  margin:8px 0px;
+  margin-left: 2%;
 
 }
 #linkTop{
+  margin:8px 0px;
+  margin-right:2%;
 
 }
 
 #bottom{
-  width:50%;
+  width:99.7%;
+  height: 12.56em;
+  background: #eeeeee;
+  border:2px solid black;
 }
 
 #pBottom{
-
+  margin: 2%;
 }
 
 h1 {

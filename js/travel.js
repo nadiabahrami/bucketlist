@@ -165,6 +165,8 @@ var userCreates = {
       third.src = shuttle[0];
       second.appendChild(third);
       inital.appendChild(second);
+      var ninth = document.createElement("div");
+      ninth.id = "ninth";
       var fourth = document.createElement("div");
       fourth.id = "topEdge";
       var fifth = document.createElement("p")
@@ -176,14 +178,15 @@ var userCreates = {
       sixth.href = shuttle[2];
       sixth.textContent = shuttle[2];
       fourth.appendChild(sixth);
-      inital.appendChild(fourth);
+      ninth.appendChild(fourth);
       var seventh = document.createElement("div");
       seventh.id = "bottom";
       var eight = document.createElement("p");
       eight.id = "pBottom";
       eight.textContent = shuttle[3];
       seventh.appendChild(eight);
-      inital.appendChild(seventh);
+      ninth.appendChild(seventh);
+      inital.appendChild(ninth);
     }
     this.logContainer.appendChild(inital);
   }
