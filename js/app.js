@@ -58,8 +58,6 @@ function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
     center: {lat: 38.0, lng: -95.35},
-
-
   });
   directionsDisplay.setMap(map);
 
@@ -128,10 +126,9 @@ var inputHandler = {
       var checkbox = document.createElement('input');
       checkbox.type = "checkbox";
       checkbox.id = allStadiums[i].name.toLowerCase().replace(" ", "_");
-    
-      var label = document.createElement('label');
+      checkbox.name= "checky"
+      var label = document.createElement('label')
       label.htmlFor = "id";
-
       label.appendChild(document.createTextNode(allStadiums[i].team));
       stadiumEl.appendChild(checkbox);
       stadiumEl.appendChild(label);
@@ -152,9 +149,6 @@ var userSelects = {
     for (var i = 0; i < yes.length; i++){
       if(yes[i].checked){
         checkedEls.push(yes[i].id);
-
-
-
       }
     };
     for(var i = 0; i < checkedEls.length; i++){
