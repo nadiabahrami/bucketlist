@@ -13,32 +13,28 @@
     <header>
       <h1 class="stitching">Travel Log</h1>
     </header>
-    <section>
-      <p>Had a blast on the athletic road trip of your dreams?  More adventures ahead?  Keep your trip stats right here in a centralized log.  Easy.  Convenient. To keep you on the road to your next destination.</p>
+    <section id="introTravel">
+      <p class= "blurb">Had a blast on the athletic road trip of your dreams?  More adventures ahead?  Keep your trip stats right here in a centralized log.  Easy.  Convenient. To keep you on the road to your next destination.</p>
     </section>
     <h1>Where I've been</h1>
     <section class ="map">
-      <canvas id = "myCanvas" height ="600px" width ="800px"></canvas>
-      <!-- <img id="blueMap" src="img/bluemap.png"/> -->
+      <canvas id = "myCanvas" height ="500px" width ="800px"></canvas>
     </section>
     <section>
       <form action="" id="team">
         <fieldset id ="list">
           <select action="" id ="drop"></select>
-          <label for ="date">Date:<label>
+          <label for ="date">Date:</label>
             <input id="date" type="text" name="date" size="12" maxlength="30" />
-          <label for ="url">Photo album URL:<label>
+          <label for ="url">Photo album URL:</label>
             <input id = "url" type="text" name="url" size= "12"/>
-          <label for ="words">Comment:<label>
+          <label for ="words">Comment:</label>
             <input id = "words" type="text" name="words" size="12"/>
         </fieldset>
       </form>
       <button type="submit" id="submit">Log trip!</button>
     </section>
     <section id= "been">
-    </section>
-    <section>
-      <fieldset id ="comment"></fieldset>
     </section>
     <footer class="footer">
       <a href="about.html">About the Authors</a>

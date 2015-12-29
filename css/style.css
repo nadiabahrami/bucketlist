@@ -94,12 +94,9 @@ ul li {
   box-sizing: border-box;
   background: white;
   background: #eeeeee;
-
-  /*background-color: grey;*/
   color: #171e42;
 	margin-left: 10px;
 	margin-top: 10px;
-  /*color: blue;*/
 }
 
  li:hover{
@@ -173,3 +170,6 @@ a {
   justify-content: space-between;
   margin: 2%;
 }
+ #address-box{
+   margin-left:6%;
+ }

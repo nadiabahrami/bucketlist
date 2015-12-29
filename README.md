@@ -22,4 +22,9 @@ This site allows the user to select a trip to the MLB stadiums of their choice a
 
  Baseball field stock image - http://yubanet.com/uploads/4/Baseball_Stock_035_1.jpg
 
- Google Fonts used - Roboto (text) and Playball (headers) - https://fonts.googleapis.com/css?family=Roboto and http://fonts.googleapis.com/css?family=Playball
+ Google Fonts used -  
+ Roboto by  Christian Robertson (text) - https://fonts.googleapis.com/css?family=Roboto and
+ Playball by TypeSETit(headers) - http://fonts.googleapis.com/css?family=Playball
+
+ Google map open developer API -
+ https://developers.google.com/maps/

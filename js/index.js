@@ -1,7 +1,5 @@
 users =[];
 
-
-
 function User  (name, password, zip){
   this.name = name;
   this.password = password;
@@ -12,8 +10,6 @@ function User  (name, password, zip){
 var handleCommentNew = function(event){
   event.preventDefault();
 
-
-
   userInput =[];
   userInput.push(event.target.name.value);
   userInput.push(event.target.password.value);
@@ -22,7 +18,6 @@ var handleCommentNew = function(event){
   invisible();
 
   if (!event.target.name.value || !event.target.password.value || !event.target.zip.value) {
-    // return alert("Please complete all fields.");
     var incomplete = document.getElementById('alert');
     var incomplete2 = document.createElement('p')
     var incomplete3 = document.createTextNode('Please Complete All Fields');
@@ -30,7 +25,6 @@ var handleCommentNew = function(event){
       incomplete2.appendChild(incomplete3);
 
   } else if (localStorage.hasOwnProperty(event.target.name.value)){
-    console.log('already here');
     var wrong = document.getElementById('alert');
     var wrong2 = document.createElement('p')
     var wrong3 = document.createTextNode("That username is taken. Choose a unique one or try logging in. Maybe you've been here before.");
@@ -40,74 +34,23 @@ var handleCommentNew = function(event){
 
         error();
 
-    //  invisible();
-    //  invisible2();
-    //  invisible3();
-     invisible4();
-
+       invisible4();
   }
 
-
   else {
-
     localStorage.setItem(users[0].name, JSON.stringify(users));
     users = JSON.parse(localStorage.getItem(users[0].name));
-
     localStorage.removeItem('active_user');
     localStorage.setItem('active_user', users[0].name);
-
-console.log('Welcome');
     location.assign("map.html");
   };
 
-  // userInput =[];
-  // userInput.push(event.target.name.value);
-  // userInput.push(event.target.password.value);
-  // userInput.push(parseInt(event.target.zip.value));
-  // var newUser = new User(userInput[0], userInput[1], userInput[2]);
-  // invisible();
-
-  // localStorage.setItem(users[0].name, JSON.stringify(users));
-  // users = JSON.parse(localStorage.getItem(users[0].name));
-
-
-
-  // localStorage.removeItem('active_user');
-  // localStorage.setItem('active_user', users[0].name);
-
-
-active_users = users[0];
-console.log(users);
-console.log(active_users);
-
-  // location.assign("test2.html");
-
-  // var x = new Date();
-  // var y = x.getSeconds();
-  // console.log(y);
-
-
-  //
-
-
-  console.log(playBall);
-
-
-  //
-  // var button0 =document.getElementsByTagName('button')[0];
-  // button0.hidden = false;
+  active_users = users[0];
 
   event.target.name.value = null;
   event.target.password.value = null;
   event.target.zip.value = null;
 }
-
-
-
-
-
-
-
 
 var handleCommentResume = function(event) {
   event.preventDefault();
@@ -121,7 +64,6 @@ var handleCommentResume = function(event) {
 
 
   if (!event.target.name.value || !event.target.password.value || !event.target.zip.value) {
-    // return alert("Please complete all fields.");
 
     var wrong = document.getElementById('alert');
     var wrong2 = document.createElement('p')
@@ -130,62 +72,32 @@ var handleCommentResume = function(event) {
      wrong2.appendChild(wrong3);
   };
 
-  // userInput =[];
-  // userInput.push(event.target.name.value);
-  // userInput.push(event.target.password.value);
-  // userInput.push(parseInt(event.target.zip.value));
-  //
-  // var newUser = new User(userInput[0], userInput[1], userInput[2]);
-
-
-  // localStorage.setItem('users', JSON.stringify(users));
-
   var restoredUser = JSON.parse(localStorage.getItem('users'));
   var restoredUserPW = JSON.parse(localStorage.getItem(users[0].name));
 
-
   localStorage.removeItem('active_user');
-  // localStorage.setItem('active_user', users[0].name);
 
   if
     (localStorage.getItem(users[0].name) !== JSON.stringify(users)) {
-    // localStorage.setItem(users[0].name, JSON.stringify(users));
-    // users = JSON.parse(localStorage.getItem(users[0].name));
-
     var wrong = document.getElementById('alert');
     var wrong2 = document.createElement('p')
     var wrong3 = document.createTextNode('Try again. Also, remember -- Case-sensitive.');
     wrong.appendChild(wrong2);
-     wrong2.appendChild(wrong3);
-    //  batterUp();
-    //  invisible2();
-    //  invisible();
-    // location.assign("sBUIndex3.html");
-invisible();
-invisible4();
-invisible3();
-invisible2();
-error();
+    wrong2.appendChild(wrong3);
 
-
+    invisible();
+    invisible4();
+    invisible3();
+    invisible2();
+    error();
   } else {
-      localStorage.setItem('active_user', users[0].name);
+    localStorage.setItem('active_user', users[0].name);
     location.assign("map.html");
-
-    // playBall();
   }
-  //
-  // invisible3();
-
-  // var playBall =document.getElementsByTagName('button')[2];
-  // playBall.hidden = false;
-
   event.target.name.value = null;
   event.target.password.value = null;
   event.target.zip.value = null;
-
 };
-
 
 function begin(){
   var hideForm = document.getElementsByTagName('form')[0];
@@ -193,10 +105,7 @@ function begin(){
   var loginHide = document.getElementsByTagName('button')[1];
   loginHide.hidden = true;
   infoForm.addEventListener("submit", handleCommentNew);
-
 }
-
-
 
 function batterUp(){
   var hideName = document.getElementsByTagName('form')[0];
@@ -204,7 +113,6 @@ function batterUp(){
   infoForm.addEventListener("submit", handleCommentResume);
   var button1 = document.getElementsByTagName('button')[0];
   button1.hidden=true;
-
 }
 
 function invisible(){

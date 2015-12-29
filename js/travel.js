@@ -1,8 +1,3 @@
-// Scan the active User
-
-// Populate what is already there
-
-
 var stadiumInfo = [
   ["AT&T Park", "San Francisco, CA", "San Francisco Giants", "37.778473", "-122.389595", "Giants.png"],
   ["Angel Stadium Anaheim", "Anaheim, CA", "Los Angeles Angels", "33.799925", "-117.883194", "Angels.png"],
@@ -61,7 +56,7 @@ var canvas = document.getElementById('myCanvas');
 };
 imgObj.src = "img/bluemap.png";
 
-var inputHandler = { //Creates the form drop box
+var inputHandler = {
   dropPop: document.getElementById('drop'),
 
   createOptions: function (){
@@ -84,17 +79,6 @@ var userArray = JSON.parse(localStorage.getItem(userKey));
 var fullComments = [];
 var tempComment = [];
 var userComments = [];
-// if(localStorage.destinations){
-//   userComments = JSON.parse(localStorage.getItem("destinations"));
-//   for(var i =0; i<userComments.length; i++){
-//     if(userComments[i][0].name===userKey){
-//       fullComments = userComments[i][1];
-//       userCreates.createLog();
-//     }
-//   };
-// }
-// console.log(userComments);
-
 
 var userCreates = {
   logContainer: document.getElementById('been'),
@@ -117,65 +101,62 @@ var userCreates = {
     this.words = words.value;
     tempComment.push(this.words);
     fullComments.push(tempComment);
-    console.log(fullComments);
     var mini = [];
     mini = userArray;
     mini[1]= fullComments;
-    console.log(mini);
     if(userComments.length ===0){
       userComments.push(mini);
-      console.log("firstime");
-      console.log(userComments);
     }else{
       var number = userComments.length
-      console.log(number);
       for(var i = 0; i<number; i++){
-        console.log("you made it");
         if(userComments[i][0].name===userArray[0].name){
           userComments[i] = mini;
-          console.log("true");
-          console.log(userComments);
         }else{
-          console.log(userComments);
-          console.log(mini);
           userComments.push(mini);
-          console.log("fasle");
-          console.log(userComments);
         }
       };
     }
     userCreates.store();
     userCreates.createLog(tempComment);
-    console.log(mini[0].name);
   },
 
   store: function(){
-    console.log("made it here")
       localStorage.setItem("destinations", JSON.stringify(userComments));
   },
 
   createLog:function(shuttle){
     for(var i=0; i<fullComments.length; i++){
       var inital = document.createElement("div");
+      inital.id = "main"
       var second = document.createElement("div");
+      second.id = "imgDiv";
       var third = document.createElement("img");
+      third.id = "logoImg"
       third.src = shuttle[0];
       second.appendChild(third);
       inital.appendChild(second);
+      var ninth = document.createElement("div");
+      ninth.id = "ninth";
       var fourth = document.createElement("div");
+      fourth.id = "topEdge";
       var fifth = document.createElement("p")
+      fifth.id="pTop";
       fifth.textContent = shuttle[1];
       fourth.appendChild(fifth);
       var sixth = document.createElement("a");
+      sixth.id = "linkTop"
       sixth.href = shuttle[2];
       sixth.textContent = shuttle[2];
       fourth.appendChild(sixth);
-      inital.appendChild(fourth);
+      ninth.appendChild(fourth);
       var seventh = document.createElement("div");
+      seventh.id = "bottom";
       var eight = document.createElement("p");
+      eight.id = "pBottom";
       eight.textContent = shuttle[3];
       seventh.appendChild(eight);
-      inital.appendChild(seventh);
+      ninth.appendChild(seventh);
+      inital.appendChild(ninth);
     }
     this.logContainer.appendChild(inital);
   }
@@ -183,28 +164,20 @@ var userCreates = {
 
 if(localStorage.destinations){
   userComments = JSON.parse(localStorage.getItem("destinations"));
-  console.log(userComments);
   for(var k =0; k<userComments.length; k++){
     if(userComments[k][0].name===userKey){
       for(var j=0; j< userComments[k][1].length; j++){
       fullComments = userComments[k][1];
       var shuttle = userComments[k][1][j];
-      console.log(fullComments[j]);
       userCreates.createLog(shuttle);
       };
     }
-    // else{
-    //   console.log("I am here");
-    //   k++;
-    //   userComments.push([]);
-    //   console.log(userComments);
-    // }
   };
 }
 
-
-console.log(userComments);
-
 document.getElementById('submit').addEventListener('click', function(event) {
   userCreates.createArray();
+  document.getElementById("date").value="";
+  document.getElementById("url").value="";
+  document.getElementById("words").value="";
 });
